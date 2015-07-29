@@ -1,7 +1,7 @@
 module UsersHelper
 require 'json'
   #
-  def give_me_title
+  def title
     @response.css("#J-ls-grid-action > div.action-main > div > div.ls-icon.ls-brief > h1").text
   end
 
@@ -14,7 +14,7 @@ require 'json'
   end
 
   def description
-    @response.css("#ali-anchor-AliPostDhMb-ygkl8 > div:nth-child(2) > p:nth-child(1) > span").text
+    @response.css("#J-rich-text-description").to_s.html_safe
   end
 
 end

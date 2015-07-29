@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'deals/index'
+
+  get 'deals/new'
+
+  get 'deals/edit'
+
+  get 'deals/show'
+
   get 'users/show'
 
   get 'users/edit'
