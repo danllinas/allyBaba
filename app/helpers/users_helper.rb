@@ -13,7 +13,7 @@ module UsersHelper
   end
 
   def description
-    render "http://www.alibaba.com/product-detail/garden-game-bounce-trampoline-park-indoor_1869840410.html"
+    @response.css("#J-product-detail")
   end
 
 end
