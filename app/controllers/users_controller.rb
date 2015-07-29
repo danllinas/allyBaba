@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @response = User.scrape
   end
 
   def edit

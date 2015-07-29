@@ -1,5 +1,6 @@
 class DealsController < ApplicationController
   def index
+    @response = Deal.scrape
   end
 
   def new
