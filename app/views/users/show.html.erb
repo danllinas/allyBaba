@@ -7,7 +7,8 @@
 <%= @user.address %><br>
 <%= @user.city %><br>
 <%= @user.state %><br>
-<%= link_to 'Edit User Information', edit_user_path %>
+<%= link_to 'Edit User Information', edit_user_path %><br>
+<%= link_to 'Delete Account', current_user, method: :delete, data: { confirm: 'Are you sure you want to destroy your account?'} %>
 
 
 <h1>Deals belonging to this user</h1>
