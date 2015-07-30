@@ -8,9 +8,9 @@ one:
   address: MyString
   city: MyString
   state: MyString
-  retail_price: 
-  wholesale_price: 
-  image: 
+  retail_price:
+  wholesale_price:
+  image:
 
 two:
   url: MyString
@@ -20,6 +20,6 @@ two:
   address: MyString
   city: MyString
   state: MyString
-  retail_price: 
-  wholesale_price: 
-  image: 
+  retail_price:
+  wholesale_price:
+  image:
