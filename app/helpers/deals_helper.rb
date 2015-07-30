@@ -12,7 +12,7 @@ module DealsHelper
   end
 
   def description
-    @response.css("#J-rich-text-description").to_s.html_safe
+    @response.css("#J-rich-text-description").text.to_s.split("").join.truncate_words(50)
   end
-  
+
 end
