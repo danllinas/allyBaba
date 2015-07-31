@@ -1,5 +1,6 @@
 class DealsController < ApplicationController
   before_action :set_deal, only: [:show, :edit, :update, :destroy]
+  validates :attachment, :attachment_content_type => { :content_type => ['image/png', 'image/jpg']}
 
   def index
     @response = Deal.scrape
@@ -17,13 +18,11 @@ class DealsController < ApplicationController
   end
 
   def create
-    if @current_user
-      @deal = Deal.new(deal_params)
-    else
+    @deal = Deal.new(deal_params)
+    if @current_user.nil?
       flash[:danger] = "Please log in."
       redirect_to login_url
-    end
-    if @deal.save
+    elsif @deal.save
       flash[:success] = "You've created a new deal!"
       redirect to @current_user
     else
