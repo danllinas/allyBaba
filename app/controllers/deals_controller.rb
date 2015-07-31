@@ -1,6 +1,6 @@
 class DealsController < ApplicationController
   before_action :set_deal, only: [:show, :edit, :update, :destroy]
-  validates :attachment, :attachment_content_type => { :content_type => ['image/png', 'image/jpg']}
+  # validates_attachment_content_type :image, :content_type => ['image/png', 'image/jpg']
 
   def index
     @response = Deal.scrape
