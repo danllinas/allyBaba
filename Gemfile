@@ -7,6 +7,8 @@ gem 'better_errors'
 gem 'httparty'
 gem 'nokogiri'
 gem 'money-rails'
+gem 'paperclip'
+gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record

@@ -10,24 +10,15 @@
 
       <%= f.label :title %>
       <%= f.text_field :title %>
-!!!!!!!!
-      <%= f.label :email %>
-      <%= f.email_field :email %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.label :image %>
+      <%= f.binary_field :image %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.label :retail_price %>
+      <%= f.money_field :retail_price %>
 
-      <%= f.label :address %>
-      <%= f.text_field :address %>
-
-      <%= f.label :city %>
-      <%= f.text_field :city %>
-
-      <%= f.label :state %>
-      <%= f.select :state, options_for_select(us_states) %>
+      <%= f.label :wholesale_price %>
+      <%= f.money_field :wholesale_price %>
 
       <%= f.submit %>
     <% end %>
