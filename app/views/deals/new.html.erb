@@ -5,22 +5,12 @@
     <%= simple_form_for(@deal) do |f| %>
       <%= render 'shared/error_messages_deal' %>
 
-      <%= f.label :url %>
-      <%= f.text_field :url %>
-
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-
-      <%= f.label :image %>
-      <%= f.binary_field :image %>
-
-      <%= f.label :retail_price %>
-      <%= f.money_field :retail_price %>
-
-      <%= f.label :wholesale_price %>
-      <%= f.money_field :wholesale_price %>
-
-      <%= f.submit %>
+      <%= f.input :url %>
+      <%= f.input :title %>
+      <%= f.input :image %>
+      <%= f.input :retail_price %>
+      <%= f.input :wholesale_price %>
+      <%= f.button :submit %>
     <% end %>
   </div>
 </div>
