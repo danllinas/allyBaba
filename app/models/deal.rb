@@ -1,4 +1,5 @@
 class Deal < ActiveRecord::Base
+  belongs_to :user
   has_attached_file :image, styles: { :medium => "500x500" }
 
   def self.scrape
