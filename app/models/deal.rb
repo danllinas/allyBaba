@@ -3,7 +3,6 @@ class Deal < ActiveRecord::Base
   has_attached_file :image, styles: { :medium => "500x500" }
   validates :image, :attachment_content_type => { :content_type => ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']}
   validates :url, presence: true
-  validates :
   monetize :wholesale_price_cents
   monetize :retail_price_cents
 
