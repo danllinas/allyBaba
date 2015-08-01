@@ -15,8 +15,8 @@ module DealsHelper
     @response.css("#J-rich-text-description").text.to_s.split("").join.truncate_words(50)
   end
 
-  def image
-    @response.css("#J-image-icontent > div > a > img")[0].to_a[1][1]
-  end
+  # def image
+  #   @response.css("#J-image-icontent > div > a > img")[0].to_a[1][1]
+  # end
 
 end
