@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'orders/index'
 
+  get '/confirmation' => 'confirmation#confirmation'
+  
   root      'deals#index'
   get       'signup'  => 'users#new'
   get       'login'   => 'sessions#new'
@@ -15,6 +17,8 @@ Rails.application.routes.draw do
   resources :users
   resources :deals
   resources :charges
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
