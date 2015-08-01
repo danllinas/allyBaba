@@ -1,6 +1,5 @@
 class DealsController < ApplicationController
-  before_action :set_deal, only: [:show, :edit, :update, :destroy]
-  # validates_attachment_content_type :image, :content_type => ['image/png', 'image/jpg']
+  before_action :logged_in_user, only: [:create, :destroy, :update, :new, :edit]
 
   def index
     @response = Deal.scrape
@@ -15,14 +14,13 @@ class DealsController < ApplicationController
   end
 
   def show
+    @deal = Deal.find(params[:id])
   end
 
   def create
-    @deal = Deal.new(deal_params)
-    if @current_user.nil?
-      flash[:danger] = "Please log in."
-      redirect_to login_url
-    elsif @deal.save
+    @deal = current_user.deals.build(deal_params)
+    if @deal.save
+      @deal.deal_expiration = 30.days.from_now
       flash[:success] = "You've created a new deal!"
       redirect to @current_user
     else
@@ -30,15 +28,23 @@ class DealsController < ApplicationController
     end
   end
 
+  def destroy
+    @micropost.destroy
+    flash[:success] = "Micropost deleted."
+    redirect_to request.referrer || root_url
+  end
+
 
   private
 
   def deal_params
-    params.require(:deal).permit(:url,  , :min_order, :title, :image, :retail_price, :wholesale_price)
+    params.require(:deal).permit(:url, :title, :retail_price_cents, :wholesale_price_cents, :image, :delivery_method, :minimum_bids, :estimated_delivery)
   end
 
-  def set_deal
-    @deal = Deal.find(params[:id])
+  def correct_user
+    @deal = current_user.deals.find_by(id: params[:id])
+    redirect_to root_url if @micropost.nil?
   end
+
 
 end
