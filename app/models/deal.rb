@@ -12,8 +12,8 @@ class Deal < ActiveRecord::Base
     dom = Nokogiri::HTML(response.body)
   end
 
-  def self.convert_price(number)
-    return "$#{number}"
-  end
+  # def self.convert_price(number)
+  #   return "$#{number}"
+  # end #Don't need this with money gem!
 
 end
