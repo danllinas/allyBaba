@@ -1,25 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   url: MyString
-#   expired: false
-#   min_order: 1
-#   title: MyString
-#   address: MyString
-#   city: MyString
-#   state: MyString
-#   retail_price:
-#   wholesale_price:
-#   image:
+one:
+  url: http://www.test.com
+  title: Test Item
+  retail_price_cents: 2500
+  wholesale_price_cents: 1000
+  delivery_method: Shyp
+  minimum_bids: 10
 #
 # two:
-#   url: MyString
-#   expired: false
-#   min_order: 1
-#   title: MyString
-#   address: MyString
-#   city: MyString
-#   state: MyString
-#   retail_price:
-#   wholesale_price:
-#   image:
+#   url: http://www.test2.com
+#   title: Test Item2
+#   retail_price_cents: 25
+#   wholesale_price_cents: 10
+#   delivery_method: Shyp
+#   minimum_bids: 100
