@@ -21,4 +21,9 @@ class DealsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "deal expiration is 30 days from now" do
+    @deal.save
+    assert_equal @deal.deal_expiration, 30.days.from_now
+  end
+
 end
