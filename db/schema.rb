@@ -61,6 +61,11 @@ ActiveRecord::Schema.define(version: 20150801202810) do
     t.string   "remember_digest"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "address2"
+    t.string   "name_on_card"
+    t.string   "card_number"
+    t.string   "expiration_date"
+    t.string   "billing_zip"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

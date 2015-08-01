@@ -1,4 +1,6 @@
-class ChargesController < ApplicationController  
+
+class ChargesController < ApplicationController
+#
   def new
   end
 
@@ -24,3 +26,4 @@ class ChargesController < ApplicationController
   end
 
 end
+

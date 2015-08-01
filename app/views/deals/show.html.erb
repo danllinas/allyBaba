@@ -3,8 +3,9 @@
 <p>Find me in app/views/deals/show.html.erb</p>
 
 <ul>
+
+  <%= @deal.title %><br>
   <%= image_tag @deal.image %>
-  <%= @deal.title %>
   <li><%= @deal.url %></li>
   <li><%= @deal.deal_expiration %></li>
   <li><%= @deal.wholesale_price %></li>
