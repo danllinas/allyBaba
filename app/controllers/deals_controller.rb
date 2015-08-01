@@ -19,10 +19,10 @@ class DealsController < ApplicationController
 
   def create
     @deal = current_user.deals.build(deal_params)
+    @deal.deal_expiration = 30.days.from_now
     if @deal.save
-      @deal.deal_expiration = 30.days.from_now
       flash[:success] = "You've created a new deal!"
-      redirect to @current_user
+      redirect_to @current_user
     else
       render 'new'
     end
