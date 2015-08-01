@@ -11,7 +11,7 @@
 <h1>Deals belonging to this user</h1>
 <% current_user.deals.each do |deal| %>
   <ul>
-    <%= image_tag deal.image %>
+    <%= image_tag deal.image %> 
     <%= link_to deal.title, deal %>
     <li><%= deal.url %></li>
     <li><%= deal.deal_expiration %></li>
