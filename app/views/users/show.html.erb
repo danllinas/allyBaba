@@ -4,11 +4,21 @@
 <%= @user.first_name %><br>
 <%= @user.last_name %><br>
 <%= @user.email %><br>
-<%= @user.address %><br>
-<%= @user.city %><br>
-<%= @user.state %><br>
 <%= link_to 'Edit User Information', edit_user_path %><br>
 <%= link_to 'Delete Account', current_user, method: :delete, data: { confirm: 'Are you sure you want to destroy your account?'} %>
 
 
 <h1>Deals belonging to this user</h1>
+<% current_user.deals.each do |deal| %>
+  <ul>
+    <%= image_tag deal.image %>
+    <%= link_to deal.title, deal %>
+    <li><%= deal.url %></li>
+    <li><%= deal.deal_expiration %></li>
+    <li><%= deal.wholesale_price %></li>
+    <li><%= deal.retail_price %></li>
+    <li><%= deal.organizer.first_name %></li>
+    <li><%= deal.organizer.email %></li>
+    <li><%= deal.estimated_delivery %></li>
+  </ul>
+<% end %>

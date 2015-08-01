@@ -31,7 +31,7 @@ class DealsController < ApplicationController
   end
 
   def destroy
-    @micropost.destroy
+    @deal.destroy
     flash[:success] = "Micropost deleted."
     redirect_to request.referrer || root_url
   end
@@ -45,7 +45,7 @@ class DealsController < ApplicationController
 
   def correct_user
     @deal = current_user.deals.find_by(id: params[:id])
-    redirect_to root_url if @micropost.nil?
+    redirect_to root_url if @deal.nil?
   end
 
 

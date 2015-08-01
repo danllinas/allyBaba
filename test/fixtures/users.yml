@@ -2,7 +2,4 @@ michael:
   first_name: Michael
   last_name: Example
   email: michael@example.com
-  address: 123 N Wynwood Lane.
-  city: Miami
-  state: FL
   password_digest: <%=  User.digest('password') %>

@@ -14,12 +14,13 @@ Description: <%= description %><br>
 <% @deals.each do |deal| %>
   <ul>
     <%= image_tag deal.image %>
-    <%= deal.title %>
+    <%= link_to deal.title, deal %>
     <li><%= deal.url %></li>
     <li><%= deal.deal_expiration %></li>
     <li><%= deal.wholesale_price %></li>
     <li><%= deal.retail_price %></li>
     <li><%= deal.organizer.first_name %></li>
     <li><%= deal.organizer.email %></li>
+    <li><%= deal.organizer.estimated_delivery %></li>
   </ul>
 <% end %>
