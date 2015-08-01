@@ -1,0 +1,28 @@
+<div>
+  <div>
+    <%= simple_form_for(@deal) do |f| %>
+      <%= render 'shared/error_messages_deal' %>
+
+      <%= f.input :url %>
+      <%= f.input :title %>
+      <%= f.input :image %>
+      <%= f.input :retail_price_cents %>
+      <%= f.input :wholesale_price_cents %>
+      <%= f.input :minimum_bids %>
+      <%= f.input :estimated_delivery %>
+
+
+
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
+
+<%= f.label :address %>
+<%= f.text_field :address %>
+
+<%= f.label :city %>
+<%= f.text_field :city %>
+
+<%= f.label :state %>
+<%= f.select :state, options_for_select(us_states) %>

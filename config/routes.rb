@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'orders/new'
-
-  get 'orders/edit'
-
-  get 'orders/show'
-
-  get 'orders/index'
 
   get '/confirmation' => 'confirmation#confirmation'
   
@@ -17,6 +10,7 @@ Rails.application.routes.draw do
   resources :users
   resources :deals
   resources :charges
+  resources :orders
 
 
 
