@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :deals
+  has_many :orders
 
   attr_accessor :remember_token
   before_save { email.downcase! }

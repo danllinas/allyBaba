@@ -11,31 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731211158) do
+ActiveRecord::Schema.define(version: 20150801202810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "deals", force: :cascade do |t|
     t.string   "url"
-    t.boolean  "expired"
-    t.integer  "min_order"
     t.string   "title"
-    t.binary   "image"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "user_id"
-    t.integer  "retail_price"
-    t.integer  "wholesale_price"
+    t.integer  "retail_price_cents"
+    t.integer  "wholesale_price_cents"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "delivery_method"
+    t.datetime "deal_expiration"
+    t.integer  "minimum_bids"
+    t.integer  "total_bids"
+    t.date     "estimated_delivery"
   end
 
   add_index "deals", ["user_id"], name: "index_deals_on_user_id", using: :btree
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email"
-    t.string   "address"
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "deal_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "shipping_address1"
+    t.string   "shipping_address2"
     t.string   "city"
     t.string   "state"
+    t.string   "cc_info"
+    t.string   "zipcode"
+  end
+
+  add_index "orders", ["deal_id"], name: "index_orders_on_deal_id", using: :btree
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
@@ -52,4 +71,6 @@ ActiveRecord::Schema.define(version: 20150731211158) do
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
   add_foreign_key "deals", "users"
+  add_foreign_key "orders", "deals"
+  add_foreign_key "orders", "users"
 end

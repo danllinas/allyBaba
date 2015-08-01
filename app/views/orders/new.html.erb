@@ -1,0 +1,12 @@
+<h1>Orders#new</h1>
+<p>Find me in app/views/orders/new.html.erb</p>
+
+CREATE THE FORM
+<%= f.label :address %>
+<%= f.text_field :address %>
+
+<%= f.label :city %>
+<%= f.text_field :city %>
+
+<%= f.label :state %>
+<%= f.select :state, options_for_select(us_states) %>

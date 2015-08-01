@@ -19,4 +19,6 @@ module DealsHelper
   #   @response.css("#J-image-icontent > div > a > img")[0].to_a[1][1]
   # end
 
+
+
 end

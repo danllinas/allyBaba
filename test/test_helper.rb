@@ -25,6 +25,10 @@ class ActiveSupport::TestCase
     end
   end
 
+  def sample_file(filename = "Dan.jpeg")
+    File.new("test/fixtures/#{filename}")
+  end
+
   private
 
       def integration_test?

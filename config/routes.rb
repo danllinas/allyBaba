@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'orders/new'
+
+  get 'orders/edit'
+
+  get 'orders/show'
+
+  get 'orders/index'
+
   root      'deals#index'
   get       'signup'  => 'users#new'
   get       'login'   => 'sessions#new'

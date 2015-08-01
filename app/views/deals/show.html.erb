@@ -1,3 +1,16 @@
 <%= provide(:title, "Current Deal") %>
 <h1>Deals#show</h1>
 <p>Find me in app/views/deals/show.html.erb</p>
+
+<ul>
+
+  <%= @deal.title %><br>
+  <%= image_tag @deal.image %>
+  <li><%= @deal.url %></li>
+  <li><%= @deal.deal_expiration %></li>
+  <li><%= @deal.wholesale_price %></li>
+  <li><%= @deal.retail_price %></li>
+  <li><%= @deal.organizer.first_name %></li>
+  <li><%= @deal.organizer.email %></li>
+  <li><%= @deal.estimated_delivery %></li>
+</ul>
