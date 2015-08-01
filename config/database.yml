@@ -7,7 +7,7 @@
 default: &default
   adapter: postgresql
   # encoding: unicode
-  username: anadeaza
+  username: matthewcorrao
   pool: 5
 
 development:
