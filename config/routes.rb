@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  get 'orders/new'
-
-  get 'orders/edit'
-
-  get 'orders/show'
-
-  get 'orders/index'
-
   root      'deals#index'
   get       'signup'  => 'users#new'
   get       'login'   => 'sessions#new'
@@ -15,6 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :deals
   resources :charges
+  resources :orders
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
