@@ -12,3 +12,15 @@
 
 
 <h1>Deals belonging to this user</h1>
+<% current_user.deals.each do |deal| %>
+  <ul>
+    <%= image_tag deal.image %>
+    <%= link_to deal.title, deal %>
+    <li><%= deal.url %></li>
+    <li><%= deal.deal_expiration %></li>
+    <li><%= deal.wholesale_price %></li>
+    <li><%= deal.retail_price %></li>
+    <li><%= deal.organizer.first_name %></li>
+    <li><%= deal.organizer.email %></li>
+  </ul>
+<% end %>

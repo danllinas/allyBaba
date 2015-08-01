@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper #makes all the methods in sessionhelper available throughout all the controllers
 
   private
-  
+
   def logged_in_user
     unless logged_in?
       flash[:danger] = "Please log in."
