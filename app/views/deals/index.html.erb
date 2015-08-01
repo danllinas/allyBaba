@@ -10,3 +10,16 @@ Description: <%= description %><br>
 
 
 <%= link_to "Create a deal!", new_deal_path %>
+
+<% @deals.each do |deal| %>
+  <ul>
+    <%= image_tag deal.image %>
+    <%= deal.title %>
+    <li><%= deal.url %></li>
+    <li><%= deal.deal_expiration %></li>
+    <li><%= deal.wholesale_price %></li>
+    <li><%= deal.retail_price %></li>
+    <li><%= deal.organizer.first_name %></li>
+    <li><%= deal.organizer.email %></li>
+  </ul>
+<% end %>
