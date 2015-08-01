@@ -23,5 +23,9 @@ class DealTest < ActiveSupport::TestCase
     @deal.image = sample_file("Alibaba Items.txt")
     refute @deal.valid?
   end
-  
+
+  test "url should be present" do
+    @deal.url = ""
+    refute @deal.valid?
+  end
 end

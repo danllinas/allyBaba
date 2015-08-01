@@ -2,6 +2,8 @@ class Deal < ActiveRecord::Base
   belongs_to :organizer, foreign_key: "user_id", class_name: "User"
   has_attached_file :image, styles: { :medium => "500x500" }
   validates :image, :attachment_content_type => { :content_type => ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']}
+  validates :url, presence: true
+  validates :
   monetize :wholesale_price_cents
   monetize :retail_price_cents
 
@@ -11,6 +13,6 @@ class Deal < ActiveRecord::Base
     dom = Nokogiri::HTML(response.body)
   end
 
-  
+
 
 end
