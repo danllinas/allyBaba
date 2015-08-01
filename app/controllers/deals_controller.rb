@@ -34,7 +34,7 @@ class DealsController < ApplicationController
   private
 
   def deal_params
-    params.require(:deal).permit(:url, :expired, :min_order, :title, :image, :retail_price, :wholesale_price)
+    params.require(:deal).permit(:url,  , :min_order, :title, :image, :retail_price, :wholesale_price)
   end
 
   def set_deal

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731233112) do
+ActiveRecord::Schema.define(version: 20150801024300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20150731233112) do
   create_table "deals", force: :cascade do |t|
     t.string   "url"
     t.string   "title"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "user_id"
     t.integer  "retail_price"
     t.integer  "wholesale_price"
@@ -29,10 +29,10 @@ ActiveRecord::Schema.define(version: 20150731233112) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "delivery_method"
-    t.string   "delivery_date"
-    t.string   "deal_time_remaining"
-    t.string   "minimum_bids"
-    t.string   "total_bids"
+    t.datetime "deal_expiration"
+    t.integer  "minimum_bids"
+    t.integer  "total_bids"
+    t.date     "estimated_delivery"
   end
 
   add_index "deals", ["user_id"], name: "index_deals_on_user_id", using: :btree
