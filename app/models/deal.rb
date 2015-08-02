@@ -5,7 +5,8 @@ class Deal < ActiveRecord::Base
   validates :url, presence: true
   monetize :wholesale_price_cents
   monetize :retail_price_cents
-
+  has_many :orders, dependent: :destroy
+  accepts_nested_attributes_for :orders
 
   def self.scrape
     response = HTTParty.get("http://www.alibaba.com/product-detail/Define-Major-Minor-Value-cc2541-iBeacon_60216539191.html?spm=a...")

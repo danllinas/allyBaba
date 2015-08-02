@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get '/confirmation' => 'confirmation#confirmation'
-  
+
   root      'deals#index'
   get       'signup'  => 'users#new'
   get       'login'   => 'sessions#new'

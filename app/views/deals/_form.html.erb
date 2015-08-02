@@ -10,8 +10,16 @@
       <%= f.input :wholesale_price_cents %>
       <%= f.input :minimum_bids %>
       <%= f.input :estimated_delivery %>
+      <%= f.input :delivery_method %>
 
-        <%#= f.fields_for :orders do |order %>
+      <%= f.simple_fields_for :orders do |o| %>
+        <%= o.input :shipping_address1 %>
+        <%= o.input :shipping_address2 %>
+        <%= o.input :city %>
+        <%= o.input :state %>
+        <%= o.input :cc_info %>
+        <%= o.input :zipcode %>
+      <% end %>
 
       <%= f.button :submit %>
     <% end %>
