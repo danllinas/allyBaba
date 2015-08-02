@@ -1,28 +1,29 @@
 <%= provide(:title, "Deals") %>
-<h1>Deals#index</h1>
+<br><br><h1>DEALS</h1>
 <p>Find me in app/views/deals/index.html.erb</p>
+<!--
+Title: <%= title %>
+Low Price: <%= low_price %>
+High Price: <%= high_price %>
+Description: <%= description %>
+ -->
 
-Title: <%= title %><br>
-Low Price: <%= low_price %><br>
-High Price: <%= high_price %><br>
-Description: <%= description %><br>
-
-
-
-<%= link_to "Create a deal!", new_deal_path %>
+<p><%= link_to "Create A Deal!", new_deal_path %></p>
 
 <% @deals.each do |deal| %>
-  <ul>
+<div id="section">
+<h1><%= link_to deal.title, deal %></h1>
+<!-- <%= deal.url %><br> -->
+<%= image_tag deal.image %><br>
+Wholesale: $<%= deal.wholesale_price %><br>
+Retail: $<%= deal.retail_price %><br>
+Expiration: <%= deal.deal_expiration %><br>
+Delivery: <%= deal.estimated_delivery %><br>
+<!-- <%= deal.organizer.first_name %><br>
+<%= deal.organizer.email %> -->
+</div>
 
-    <%= link_to deal.title, deal %><br>
-    <%= image_tag deal.image %>
-    <li><%= deal.url %></li>
-    <li><%= deal.deal_expiration %></li>
-    <li><%= deal.wholesale_price %></li>
-    <li><%= deal.retail_price %></li>
-    <li><%= deal.organizer.first_name %></li>
-    <li><%= deal.organizer.email %></li>
-    <li><%= deal.estimated_delivery %></li>
-  </ul>
+<br>
+
+
 <% end %>
-

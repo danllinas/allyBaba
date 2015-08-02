@@ -2,15 +2,20 @@
 <h1>Deals#show</h1>
 <p>Find me in app/views/deals/show.html.erb</p>
 
-<ul>
 
-  <%= @deal.title %><br>
-  <%= image_tag @deal.image %>
-  <li><%= @deal.url %></li>
-  <li><%= @deal.deal_expiration %></li>
-  <li><%= @deal.wholesale_price %></li>
-  <li><%= @deal.retail_price %></li>
-  <li><%= @deal.organizer.first_name %></li>
-  <li><%= @deal.organizer.email %></li>
-  <li><%= @deal.estimated_delivery %></li>
-</ul>
+<ul>
+  <div id= "header">
+  <%= @deal.title %><br><br>
+</div><br><br>
+  <div id= "section">
+  <%= image_tag @deal.image %><br>
+  <%= @deal.url %>
+</div>
+  <div id= "nav">
+  <%= @deal.deal_expiration %><br>
+  <%= @deal.wholesale_price %><br>
+  <%= @deal.retail_price %><br>
+  <%= @deal.estimated_delivery %><br>
+  <%= @deal.organizer.first_name %><br>
+  <%= @deal.organizer.email %>
+</div>

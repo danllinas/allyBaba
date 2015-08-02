@@ -7,11 +7,7 @@
 default: &default
   adapter: postgresql
   # encoding: unicode
-<<<<<<< HEAD
   username: matthewcorrao
-=======
-  username: Danny
->>>>>>> fa6c6f9cde41db1426fcce08de7f035b6e17dd8f
   pool: 5
 
 development:
