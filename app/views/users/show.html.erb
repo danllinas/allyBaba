@@ -12,14 +12,14 @@
 <% current_user.deals.each do |deal| %>
   <ul>
     <%= image_tag deal.image %>
-    <%= link_to deal.title, deal %>
-    <li><%= deal.url %></li>
-    <li><%= deal.deal_expiration %></li>
-    <li><%= deal.wholesale_price %></li>
-    <li><%= deal.retail_price %></li>
-    <li><%= deal.organizer.first_name %></li>
-    <li><%= deal.organizer.email %></li>
-    <li><%= deal.estimated_delivery %></li>
-    <li><%= deal.total_bids %></li>
+    <li><strong>Deal Title: </strong><%= link_to deal.title, deal %></li>
+    <li>URL: <%= deal.url %></li>
+    <li>Deal expiration: <%= l deal.deal_expiration, format: :long %></li>
+    <li>Wholesale Price: <%= deal.wholesale_price %></li>
+    <li>Retail Price: <%= deal.retail_price %></li>
+    <li>Organizer: <%= deal.organizer.first_name %></li>
+    <li>Contact Organizer: <%= deal.organizer.email %></li>
+    <li>Estimated Delivery: <%= l deal.estimated_delivery, format: :long %></li>
+    <li>Total Bids: <%= deal.total_bids %></li>
   </ul>
 <% end %>

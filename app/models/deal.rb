@@ -5,7 +5,7 @@ class Deal < ActiveRecord::Base
   validates :url, presence: true
   monetize :wholesale_price_cents
   monetize :retail_price_cents
-  has_many :orders
+  has_many :orders, dependent: :destroy
   accepts_nested_attributes_for :orders
 
   def self.scrape
