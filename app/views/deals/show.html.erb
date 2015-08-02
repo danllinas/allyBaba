@@ -3,14 +3,21 @@
 <p>Find me in app/views/deals/show.html.erb</p>
 
 <ul>
+  <div id= "header">
+  <%= @deal.title %><br><br>
+</div><br><br>
+  <div id= "section">
+  <%= image_tag @deal.image %><br>
+  <%= @deal.url %>
+</div>
+  <div id= "nav">
+  <%= l @deal.deal_expiration, format: :long %><br>
+  <%= @deal.wholesale_price %><br>
+  <%= @deal.retail_price %><br>
+  <%= l @deal.estimated_delivery, format: :long %><br>
+  <%= @deal.organizer.first_name %><br>
+  <%= @deal.organizer.email %>
+</div>
 
-  <%= @deal.title %><br>
-  <%= image_tag @deal.image %>
-  <li><%= @deal.url %></li>
-  <li><%= @deal.deal_expiration %></li>
-  <li><%= @deal.wholesale_price %></li>
-  <li><%= @deal.retail_price %></li>
-  <li><%= @deal.organizer.first_name %></li>
-  <li><%= @deal.organizer.email %></li>
-  <li><%= @deal.estimated_delivery %></li>
-</ul>
+<%= link_to 'Edit Deal', edit_deal_path %><br>
+<%= link_to 'Delete deal', @deal, method: :delete, data: { confirm: 'Are you sure you want to destroy this deal?'} %>

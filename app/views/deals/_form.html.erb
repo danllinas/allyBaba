@@ -10,19 +10,18 @@
       <%= f.input :wholesale_price_cents %>
       <%= f.input :minimum_bids %>
       <%= f.input :estimated_delivery %>
+      <%= f.input :delivery_method %>
 
-
+      <%= f.simple_fields_for :orders do |o| %>
+        <%= o.input :shipping_address1 %>
+        <%= o.input :shipping_address2 %>
+        <%= o.input :city %>
+        <%= o.input :state %>
+        <%= o.input :cc_info %>
+        <%= o.input :zipcode %>
+      <% end %>
 
       <%= f.button :submit %>
     <% end %>
   </div>
 </div>
-
-<%= f.label :address %>
-<%= f.text_field :address %>
-
-<%= f.label :city %>
-<%= f.text_field :city %>
-
-<%= f.label :state %>
-<%= f.select :state, options_for_select(us_states) %>
