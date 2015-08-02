@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @order.save(order_params)
   end
 
   def update

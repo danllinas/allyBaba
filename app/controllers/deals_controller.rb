@@ -35,6 +35,7 @@ class DealsController < ApplicationController
     @deal.wholesale_price = @deal.wholesale_price_cents
     @deal.retail_price = @deal.retail_price_cents
     @deal.total_bids = 1
+    @order = @deal.orders.build
     if @deal.save
       flash[:success] = "You've created a new deal!"
       redirect_to @current_user
