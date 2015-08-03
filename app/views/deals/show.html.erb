@@ -1,4 +1,4 @@
-<%= provide(:title, "Current Deal") %>
+<!-- <%= provide(:title, "Current Deal") %>
 <p>Find me in app/views/deals/show.html.erb</p>
 <ul>
   <div id= "header">
@@ -18,6 +18,8 @@
 <br><br><br>
   <div id= "nav">
 
+<<<<<<< HEAD -->
+  <div id= "nav">
   Wholesale Price: <%= @deal.wholesale_price %><br>
   Retail Price: <%= @deal.retail_price %><br>
   Organizer: <%= @deal.organizer.first_name %>
@@ -25,3 +27,16 @@
   Expiration: <%= l @deal.deal_expiration, format: :long %><br>
   Delivery: <%= l @deal.estimated_delivery, format: :long %>
 </div>
+
+<% if logged_in? %>
+  <% if current_user.id == @deal.organizer.id %>
+    <%= link_to 'Edit Deal', edit_deal_path %><br>
+    <%= link_to 'Delete deal', @deal, method: :delete, data: { confirm: 'Are you sure you want to destroy this deal?'} %>
+  <% else %>
+    <%= link_to "Join this deal!", new_deal_orders_path(@deal.id) %>
+  <% end %>
+<% else %>
+  <p>
+    Go <%= link_to "login", login_path %> to jump on this deal!
+  </p>
+<% end %>
