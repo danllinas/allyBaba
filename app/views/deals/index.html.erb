@@ -1,26 +1,18 @@
 <%= provide(:title, "Deals") %>
 <br><br><h1>DEALS</h1>
 <p>Find me in app/views/deals/index.html.erb</p>
-<!--
-Title: <%= title %>
-Low Price: <%= low_price %>
-High Price: <%= high_price %>
-Description: <%= description %>
- -->
 
 <p><%= link_to "Create A Deal!", new_deal_path %></p>
 
 <% @deals.each do |deal| %>
 <div id="section">
 <h1><%= link_to deal.title, deal %></h1>
-<!-- <%= deal.url %><br> -->
 <%= image_tag deal.image %><br>
 Wholesale: $<%= deal.wholesale_price %><br>
 Retail: $<%= deal.retail_price %><br>
-Expiration: <%= deal.deal_expiration %><br>
-Delivery: <%= deal.estimated_delivery %><br>
-<!-- <%= deal.organizer.first_name %><br>
-<%= deal.organizer.email %> -->
+Expiration: <%= l deal.deal_expiration, format: :long %><br>
+Delivery: <%= l deal.estimated_delivery, format: :long %><br>
+
 </div>
 
 <br>

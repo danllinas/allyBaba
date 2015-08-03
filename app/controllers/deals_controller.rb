@@ -30,18 +30,17 @@ class DealsController < ApplicationController
   end
 
   def create
-    @deal = current_user.deals.build(deal_params)
+    @deal = current_user.deals.new(deal_params)
     @deal.deal_expiration = 30.days.from_now
     @deal.wholesale_price = @deal.wholesale_price_cents
     @deal.retail_price = @deal.retail_price_cents
-<<<<<<< HEAD
-    # @deal.total_bids += 1
-=======
     @deal.total_bids = 1
-    @order = @deal.orders.build
->>>>>>> 4ccd22ffae6443bdd6cb988214d2fd15a326d6ca
     if @deal.save
       flash[:success] = "You've created a new deal!"
+      @order = Order.new
+      @order.user_id = current_user.id
+      @order.deal_id = @deal.id
+      @order.save
       redirect_to @current_user
     else
       render 'new'
@@ -50,6 +49,10 @@ class DealsController < ApplicationController
 
   def destroy
     @deal = current_user.deals.find_by(id: params[:id])
+    # if @current_user.id != @deal.user_id
+    #   flash[:danger] = "You are not authorized."
+    #   redirect_to root_url
+    # end
     @deal.destroy
     flash[:success] = "Deal deleted."
     redirect_to @current_user || root_url

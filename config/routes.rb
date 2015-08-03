@@ -3,19 +3,24 @@ Rails.application.routes.draw do
 
   get '/confirmation' => 'pages#confirmation'
   get '/how_it_works' => 'pages#how_it_works'
-  
+
 
   root      'deals#index'
   get       'signup'  => 'users#new'
   get       'login'   => 'sessions#new'
   post      'login'   => 'sessions#create'
   delete    'logout'  => 'sessions#destroy'
-  resources :users
-  resources :deals
-  resources :charges
+
+  resources :users do
+    resources :deals
+  end
+
+  resources :deals do
+    resources :orders
+  end
+
   resources :orders
-
-
+  resources :charges
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
