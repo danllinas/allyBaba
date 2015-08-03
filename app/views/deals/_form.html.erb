@@ -11,15 +11,12 @@
       <%= f.input :minimum_bids %>
       <%= f.input :estimated_delivery %>
       <%= f.input :delivery_method %>
-
-      <%= f.simple_fields_for :orders do |o| %>
-        <%= o.input :shipping_address1 %>
-        <%= o.input :shipping_address2 %>
-        <%= o.input :city %>
-        <%= o.input :state %>
-        <%= o.input :cc_info %>
-        <%= o.input :zipcode %>
-      <% end %>
+      <%= f.input :shipping_address1 %>
+      <%= f.input :shipping_address2 %>
+      <%= f.input :city %>
+      <%= f.input :state %>
+      <%= f.input :cc_info %>
+      <%= f.input :zipcode %>
 
       <%= f.button :submit %>
     <% end %>

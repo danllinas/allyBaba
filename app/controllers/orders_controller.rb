@@ -16,7 +16,9 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @order = Order.new
     @order.save(order_params)
+    redirect_to current_user
   end
 
   def update

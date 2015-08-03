@@ -19,5 +19,9 @@
   <%= @deal.organizer.email %>
 </div>
 
-<%= link_to 'Edit Deal', edit_deal_path %><br>
-<%= link_to 'Delete deal', @deal, method: :delete, data: { confirm: 'Are you sure you want to destroy this deal?'} %>
+<% if current_user.id == @deal.organizer.id %>
+  <%= link_to 'Edit Deal', edit_deal_path %><br>
+  <%= link_to 'Delete deal', @deal, method: :delete, data: { confirm: 'Are you sure you want to destroy this deal?'} %>
+<% else %>
+  <%= link_to "Join this deal!", new_order_path %>
+<% end %>
