@@ -17,10 +17,19 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %><br>
-
+      <%= f.label :address1 %>
+      <%= f.text_field :address1 %>
+      <%= f.label :address2 %>
+      <%= f.text_field :address2 %>
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+      <%= select_tag :state, options_for_select(us_states)%>
+      <%= f.label :zipcode %>
+      <%= f.text_field :zipcode %>
+      <%= f.label :cc_info %>
+      <%= f.text_field :cc_info %>
       <%= f.submit %>
     <% end %>
   </div>
 
 </div>
-
