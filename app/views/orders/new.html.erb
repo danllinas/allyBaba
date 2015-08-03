@@ -1,4 +1,10 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
-
-<%= render 'form' %>
+<h1>Here is your deal summary:</h1>
+<%= image_tag @deal.image %><br>
+Original Deal URL: <%= @deal.url %><br>
+Deal Title: <%= @deal.title %><br>
+Retail Price: $<%= @deal.retail_price %><br>
+Wholesale Price: $<%= @deal.wholesale_price %><br>
+Minimum Bids: <%= @deal.minimum_bids %><br>
+Current Number of Bids: <%= @deal.total_bids %><br>
+Deal Expiration Date: <%= l @deal.deal_expiration, format: :long %><br>
+Estimated Delivery: <%= l @deal.estimated_delivery, format: :long %><br>

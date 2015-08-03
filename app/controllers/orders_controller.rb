@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @deal = Deal.find_by(params[:id])
   end
 
   def edit
