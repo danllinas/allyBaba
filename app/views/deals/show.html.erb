@@ -1,27 +1,27 @@
 <%= provide(:title, "Current Deal") %>
-<h1>Deals#show</h1>
 <p>Find me in app/views/deals/show.html.erb</p>
-
 <ul>
   <div id= "header">
-  <%= @deal.title %><br><br>
-</div><br><br>
+  <h1><%= @deal.title %><h1>
+</div>
   <div id= "section">
   <%= image_tag @deal.image %><br>
-  <%= @deal.url %>
-</div>
-  <div id= "nav">
-  <%= l @deal.deal_expiration, format: :long %><br>
-  <%= @deal.wholesale_price %><br>
-  <%= @deal.retail_price %><br>
-  <%= l @deal.estimated_delivery, format: :long %><br>
-  <%= @deal.organizer.first_name %><br>
-  <%= @deal.organizer.email %>
-</div>
+  <%= @deal.url %><br>
+  <% if current_user.id == @deal.organizer.id %>
+    <%= link_to 'Edit Deal', edit_deal_path %><br>
+    <%= link_to 'Delete deal', @deal, method: :delete, data: { confirm: 'Are you sure you want to destroy this deal?'}%>
+  <% else %>
+    <%= link_to "Join this deal!", new_order_path %>
+  <% end %>
 
-<% if current_user.id == @deal.organizer.id %>
-  <%= link_to 'Edit Deal', edit_deal_path %><br>
-  <%= link_to 'Delete deal', @deal, method: :delete, data: { confirm: 'Are you sure you want to destroy this deal?'} %>
-<% else %>
-  <%= link_to "Join this deal!", new_order_path %>
-<% end %>
+</div>
+<br><br><br>
+  <div id= "nav">
+
+  Wholesale Price: <%= @deal.wholesale_price %><br>
+  Retail Price: <%= @deal.retail_price %><br>
+  Organizer: <%= @deal.organizer.first_name %>
+  / <%= @deal.organizer.email %><br>
+  Expiration: <%= l @deal.deal_expiration, format: :long %><br>
+  Delivery: <%= l @deal.estimated_delivery, format: :long %>
+</div>
