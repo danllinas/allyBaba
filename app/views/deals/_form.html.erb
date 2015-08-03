@@ -1,22 +1,31 @@
 <div>
   <div>
-    <%= simple_form_for(@deal) do |f| %>
+    <%= form_for(@deal) do |f| %>
       <%= render 'shared/error_messages_deal' %>
 
-      <%= f.input :url %>
-      <%= f.input :title %>
-      <%= f.input :image %>
-      <%= f.input :retail_price_cents %>
-      <%= f.input :wholesale_price_cents %>
-      <%= f.input :minimum_bids %>
-      <%= f.input :estimated_delivery %>
-      <%= f.input :delivery_method %>
-      <%= f.input :shipping_address1 %>
-      <%= f.input :shipping_address2 %>
-      <%= f.input :city %>
-      <%= f.input :state %>
-      <%= f.input :cc_info %>
-      <%= f.input :zipcode %>
+      <%= f.label :url %>
+      <%= f.url_field :url %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+
+      <%= f.label :retail_price_cents %>
+      <%= f.number_field :retail_price_cents %>
+
+      <%= f.label :wholesale_price_cents %>
+      <%= f.number_field :wholesale_price_cents %>
+
+      <%= f.label :minimum_bids %>
+      <%= f.number_field :minimum_bids %>
+
+      <%= f.label :estimated_delivery %>
+      <%= f.date_field :estimated_delivery %>
+
+      <%= f.label :delivery_method %>
+      <%= f.text_field :delivery_method %>
 
       <%= f.button :submit %>
     <% end %>
