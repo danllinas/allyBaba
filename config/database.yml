@@ -8,11 +8,7 @@ default: &default
   adapter: postgresql
   # encoding: unicode
 
-<<<<<<< HEAD
   username: matthewcorrao
-=======
-  username: anadeaza
->>>>>>> d68a08730af17ad1385a38e375ad74c703afc817
 
   pool: 5
 
