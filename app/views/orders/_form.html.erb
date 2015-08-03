@@ -1,9 +1,9 @@
 <%= simple_form_for @order do |f| %>
-  <%= f.input :shipping_address1 %>
-  <%= f.input :shipping_address2 %>
-  <%= f.input :city %>
-  <%= f.input :state %>
-  <%= f.input :cc_info %>
-  <%= f.input :zipcode %>
+  <%= f.input :buyer_address1 %>
+  <%= f.input :buyer_address2 %>
+  <%= f.input :buyer_city %>
+  <%= f.input :buyer_state %>
+  <%= f.input :buyer_cc_info %>
+  <%= f.input :buyer_zipcode %>
   <%= f.submit %>
 <% end %>
