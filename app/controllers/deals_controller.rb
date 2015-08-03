@@ -34,12 +34,10 @@ class DealsController < ApplicationController
     @deal.deal_expiration = 30.days.from_now
     @deal.wholesale_price = @deal.wholesale_price_cents
     @deal.retail_price = @deal.retail_price_cents
-<<<<<<< HEAD
-    # @deal.total_bids += 1
-=======
+
     @deal.total_bids = 1
     @order = @deal.orders.build
->>>>>>> 4ccd22ffae6443bdd6cb988214d2fd15a326d6ca
+
     if @deal.save
       flash[:success] = "You've created a new deal!"
       redirect_to @current_user
