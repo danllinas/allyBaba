@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803201531) do
+ActiveRecord::Schema.define(version: 20150803211224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,8 +46,14 @@ ActiveRecord::Schema.define(version: 20150803201531) do
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "deal_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "buyer_address1"
+    t.string   "buyer_address2"
+    t.string   "buyer_city"
+    t.string   "buyer_state"
+    t.string   "buyer_cc_info"
+    t.string   "buyer_zipcode"
   end
 
   add_index "orders", ["deal_id"], name: "index_orders_on_deal_id", using: :btree
