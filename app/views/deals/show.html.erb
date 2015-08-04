@@ -17,7 +17,20 @@
   <div id= "section">
   <%= image_tag @deal.image %><br>
   <%= @deal.url %><br>
+  <% if logged_in? %>
+    <% if current_user.id == @deal.organizer.id %>
+      <%= link_to 'Edit Deal', edit_deal_path %><br>
+      <%= link_to 'Delete deal', @deal, method: :delete, data: { confirm: 'Are you sure you want to destroy this deal?'} %>
+    <% else %>
+      <%= link_to "Join this deal!", new_deal_order_path(@deal.id) %>
+    <% end %>
+  <% else %>
+    <p>
+      Go <%= link_to "login", login_path %> to jump on this deal!
+    </p>
+  <% end %>
 </div>
+
 <div id="nav"><br><br><br><br>
   Wholesale Price: <%= @deal.wholesale_price %><br>
   Retail Price: <%= @deal.retail_price %><br>
@@ -27,18 +40,6 @@
   Delivery: <%= l @deal.estimated_delivery, format: :long %>
 </div>
 
-<% if logged_in? %>
-  <% if current_user.id == @deal.organizer.id %>
-    <%= link_to 'Edit Deal', edit_deal_path %><br>
-    <%= link_to 'Delete deal', @deal, method: :delete, data: { confirm: 'Are you sure you want to destroy this deal?'} %>
-  <% else %>
-    <%= link_to "Join this deal!", new_deal_order_path(@deal.id) %>
-  <% end %>
-<% else %>
-  <p>
-    Go <%= link_to "login", login_path %> to jump on this deal!
-  </p>
-<% end %>
 
 <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count">
 </div>
