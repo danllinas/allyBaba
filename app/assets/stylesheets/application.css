@@ -13,9 +13,29 @@
  *= require_tree .
  *= require_self
  */
-nav ul li{
+/*nav ul li{
   display: block;
   font-family: "baskerville";
   width: 60px;
   float: right;
+}*/
+/*div {
+  text-align: center;
+}*/
+
+li {
+  display: inline;
+  font-family: "baskerville";
+}
+
+#user_nav {
+  text-align: right;
+}
+
+#user_nav ul {
+  list-style-type: none;
+}
+
+#user_nav ul li :hover {
+  color: #66CCFF;
 }
