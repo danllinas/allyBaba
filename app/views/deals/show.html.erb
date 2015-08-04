@@ -1,25 +1,24 @@
-<!-- <%= provide(:title, "Current Deal") %>
-<p>Find me in app/views/deals/show.html.erb</p>
-<ul>
-  <div id= "header">
-  <h1><%= @deal.title %><h1>
+<html>
+<body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1666401163591465";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+<br>
+<div id= "header">
+<h1><%= @deal.title %><h1>
 </div>
   <div id= "section">
   <%= image_tag @deal.image %><br>
   <%= @deal.url %><br>
-  <% if current_user.id == @deal.organizer.id %>
-    <%= link_to 'Edit Deal', edit_deal_path %><br>
-    <%= link_to 'Delete deal', @deal, method: :delete, data: { confirm: 'Are you sure you want to destroy this deal?'}%>
-  <% else %>
-    <%= link_to "Join this deal!", new_order_path %>
-  <% end %>
-
 </div>
-<br><br><br>
-  <div id= "nav">
-
-<<<<<<< HEAD -->
-  <div id= "nav">
+<div id="nav"><br><br><br><br>
   Wholesale Price: <%= @deal.wholesale_price %><br>
   Retail Price: <%= @deal.retail_price %><br>
   Organizer: <%= @deal.organizer.first_name %>
@@ -33,10 +32,16 @@
     <%= link_to 'Edit Deal', edit_deal_path %><br>
     <%= link_to 'Delete deal', @deal, method: :delete, data: { confirm: 'Are you sure you want to destroy this deal?'} %>
   <% else %>
-    <%= link_to "Join this deal!", new_deal_orders_path(@deal.id) %>
+    <%= link_to "Join this deal!", new_deal_order_path(@deal.id) %>
   <% end %>
 <% else %>
   <p>
     Go <%= link_to "login", login_path %> to jump on this deal!
   </p>
 <% end %>
+
+<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count">
+</div>
+
+</body>
+</html>

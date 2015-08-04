@@ -12,15 +12,18 @@
 </nav>
 <hr> -->
 <div id="user_nav">
-	<%= link_to "Home", root_path %>
+  <ul>
+	|  <li><%= link_to "Home", root_path %></li>
 
-    <%= link_to "How It Works", how_it_works_path %>
+  |  <li><%= link_to "How It Works", how_it_works_path %></li>
 
-    <% if current_user %>
-    Hello, <%= link_to current_user.first_name, user_path(current_user.id) %>
-    <%= link_to "Log out", logout_path, method: "delete" %>
+    |  <li><% if current_user %></li>
+    Hello, <%= link_to current_user.first_name, user_path(current_user.id) %></li>
+    |  <li><%= link_to "Log out", logout_path, method: "delete" %></li>
   		<% else %>
-    <%= link_to "Sign up", signup_path %> or
-    <%= link_to "log in", login_path %>
-  <% end %>
+    |  <li><%= link_to "Sign up", signup_path %></li>
+         or
+    |  <li><%= link_to "log in", login_path %></li>
+      <% end %> |  
+</ul>
 </div>
