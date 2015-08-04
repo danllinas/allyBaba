@@ -8,3 +8,7 @@ Minimum Bids: <%= @deal.minimum_bids %><br>
 Current Number of Bids: <%= @deal.total_bids %><br>
 Deal Expiration Date: <%= l @deal.deal_expiration, format: :long %><br>
 Estimated Delivery: <%= l @deal.estimated_delivery, format: :long %><br>
+
+<p>
+  Ready? Click here to join this deal! <%= button_to "Join Deal", deal_orders_path %>
+</p>

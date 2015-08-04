@@ -17,9 +17,15 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @deal = Deal.find_by(params[:id])
     @order = Order.new
-    @order.save(order_params)
-    redirect_to current_user
+    @order.deal_id = @deal.id
+    @order.user_id = current_user.id
+    if @order.save
+      @deal.total_bids += 1
+      @deal.save
+      redirect_to current_user
+    end
   end
 
   def update
@@ -29,10 +35,10 @@ class OrdersController < ApplicationController
   end
 
   private
-
-  def order_params
-    params.require(:order)
-  end
+  #
+  # def order_params
+  #   params.require(:order)
+  # end
 
 
 end
