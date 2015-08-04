@@ -18,16 +18,16 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %><br>
       <%= f.label :address1 %>
-      <%= f.text_field :address1 %>
+      <%= f.text_field :address1 %><br>
       <%= f.label :address2 %>
-      <%= f.text_field :address2 %>
+      <%= f.text_field :address2 %><br>
       <%= f.label :city %>
-      <%= f.text_field :city %>
-      <%= select_tag :state, options_for_select(us_states)%>
+      <%= f.text_field :city %><br>
+      <%= select_tag :state, options_for_select(us_states)%><br>
       <%= f.label :zipcode %>
-      <%= f.text_field :zipcode %>
+      <%= f.text_field :zipcode %><br>
       <%= f.label :cc_info %>
-      <%= f.text_field :cc_info %>
+      <%= f.text_field :cc_info %><br>
       <%= f.submit %>
     <% end %>
   </div>

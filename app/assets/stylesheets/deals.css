@@ -6,7 +6,7 @@ h1 {
   font-family: "baskerville";
 }
 img {
-  width: 200px;
+  width: 250px;
   height: auto;
 }
 p {
@@ -25,4 +25,6 @@ ul {
     font-weight: bold;
     width:350px;
     float:left;
+    padding-right: 50px;
+    text-align: center;
 }
