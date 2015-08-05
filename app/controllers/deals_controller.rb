@@ -4,6 +4,7 @@ class DealsController < ApplicationController
   def index
     if params[:search]
       @response = Deal.search(params[:search])
+      raise
     end
     @deals = Deal.all
   end

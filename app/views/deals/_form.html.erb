@@ -25,7 +25,10 @@
       <%= f.date_field :estimated_delivery %><br><br>
 
       <%= f.label :delivery_method %>
-      <%= f.text_field :delivery_method %><br><br>
+      <%= f.text_field :delivery_method %><br>
+
+      <%= f.label :description %>
+      <%= f.text_area :description %><br>
 
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"

@@ -28,23 +28,31 @@
   </div>
 <br><br>
 <% end %>
-
-<h1>Deal I've Joined</h1>
-<% current_user.orders.each do |order| %>
-  <% if order.deal.organizer == order.buyer %>
-    <% next %>
-  <% end %>
-  <ul>
-    <%= image_tag order.deal.image %>
-    <li>Deal Title: <%= order.deal.title %></li>
-    <li>URL to deal origin: <%= order.deal.url %></li>
-    <li>Deal Expiration: <%= order.deal.deal_expiration %></li>
-    <li>Wholesale Price: <%= order.deal.wholesale_price %></li>
-    <li>Retail Price: <%= order.deal.retail_price %></li>
-    <li>Send Message to Organizer: <%= link_to order.deal.organizer.email %></li>
-    <li>Esitmated Delivery: <%= l order.deal.estimated_delivery, format: :long %></li>
-    <li>Minimum Bids: <%= order.deal.minimum_bids %></li>
-    <li>Total Bids: <%= order.deal.total_bids %></li>
-    <li>Progress: <%= number_to_percentage(progress( order.deal.total_bids, order.deal.minimum_bids), precision: 0) %></li>
-  </ul>
-<% end %>
+<hr>
+<div>
+  <h1>Deal I've Joined</h1>
+    <div>
+    <ul>
+      <% current_user.orders.each do |order| %>
+        <% if order.deal.organizer == order.buyer %>
+          <% next %>
+        <% end %>
+        <li>
+          <div id="section">
+            <%= image_tag order.deal.image %><br>
+            Deal Title: <%= order.deal.title %><br>
+            URL to deal origin: <%= order.deal.url %><br>
+            Deal Expiration: <%= order.deal.deal_expiration %><br>
+            Wholesale Price: <%= order.deal.wholesale_price %><br>
+            Retail Price: <%= order.deal.retail_price %><br>
+            Send Message to Organizer: <%= link_to order.deal.organizer.email %><br>
+            Esitmated Delivery: <%= l order.deal.estimated_delivery, format: :long %><br>
+            Minimum Bids: <%= order.deal.minimum_bids %><br>
+            Total Bids: <%= order.deal.total_bids %><br>
+            Progress: <%= number_to_percentage(progress( order.deal.total_bids, order.deal.minimum_bids), precision: 0) %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
