@@ -12,5 +12,9 @@
 <li>Deal Expiration Date: <%= l @deal.deal_expiration, format: :long %></li><br>
 <li>Estimated Delivery: <%= l @deal.estimated_delivery, format: :long %></li><br>
 <p>
+
  <%= button_to "Join Deal", deal_orders_path %>
+
+  Ready? Click here to join this deal! <%#= button_to "Join Deal", deal_orders_path %>
 </p>
+<%= render 'form' %>
