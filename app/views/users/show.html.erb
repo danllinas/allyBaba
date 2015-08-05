@@ -10,14 +10,7 @@
 </div>
 
 <p><%= link_to "Create A Deal!", new_deal_path %></p>
-<br><br>
-<!--
-=======
 
-
-<h1>My Created Deals</h1>
-<p><%= link_to "Create A Deal!", new_deal_path %></p>
->>>>>>> 6899b9b9a9ef4ad32429d627fa0749650a8e05da -->
 <% current_user.deals.each do |deal| %>
 <div id="my_deal">
     <%= link_to deal.title, deal %> <br>
@@ -29,13 +22,18 @@
     Organizer: <%= deal.organizer.first_name %><br>
     Contact Organizer: <%= deal.organizer.email %><br>
     Estimated Delivery: <%= l deal.estimated_delivery, format: :long %><br>
-    Total Bids: <%= deal.total_bids %>
+    Minimum Bids: <%= deal.minimum_bids %><br>
+    Total Bids: <%= deal.total_bids %><br>
+    Progress: <%= number_to_percentage(progress( deal.total_bids, deal.minimum_bids), precision: 0) %>
   </div>
 <br><br>
 <% end %>
 
 <h1>Deal I've Joined</h1>
 <% current_user.orders.each do |order| %>
+  <% if order.deal.organizer == order.buyer %>
+    <% next %>
+  <% end %>
   <ul>
     <%= image_tag order.deal.image %>
     <li>Deal Title: <%= order.deal.title %></li>

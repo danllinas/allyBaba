@@ -18,7 +18,8 @@ class OrdersController < ApplicationController
 
   def create
     @deal = Deal.find_by(params[:id])
-    @order = Order.new
+    @order = Order.new(stripe_params)
+    @order.process_payment
     @order.deal_id = @deal.id
     @order.user_id = current_user.id
     if @order.save
@@ -35,10 +36,8 @@ class OrdersController < ApplicationController
   end
 
   private
-  #
-  # def order_params
-  #   params.require(:order)
-  # end
-
+  def stripe_params
+    params.permit :stripeEmail, :stripeToken
+  end
 
 end
