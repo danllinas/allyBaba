@@ -27,7 +27,11 @@
       <%= f.label :delivery_method %>
       <%= f.text_field :delivery_method %><br><br>
 
-      <%= f.button :submit %>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="Charge"
+              data-amount=<%=@deal.wholesale_price_cents%>
+      </script>
     <% end %>
   </div>
 </div>

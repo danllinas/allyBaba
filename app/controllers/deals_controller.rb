@@ -35,13 +35,20 @@ class DealsController < ApplicationController
     @deal.wholesale_price = @deal.wholesale_price_cents
     @deal.retail_price = @deal.retail_price_cents
     @deal.total_bids = 1
+
+    @order = Order.new(stripe_params)
+
     if @deal.save
       flash[:success] = "You've created a new deal!"
-      @order = Order.new
+      @order.process_payment
       @order.user_id = current_user.id
       @order.deal_id = @deal.id
-      @order.save
-      redirect_to @current_user
+      if @order.save
+        redirect_to @current_user
+      else
+        flash[:danger] = "Your payment was unsuccessful."
+        @deal.destroy
+      end
     else
       render 'new'
     end
@@ -67,6 +74,10 @@ class DealsController < ApplicationController
 
   def deal_params
     params.require(:deal).permit(:url, :title, :retail_price_cents, :wholesale_price_cents, :image, :delivery_method, :minimum_bids, :estimated_delivery)
+  end
+
+  def stripe_params
+    params.permit :stripeEmail, :stripeToken
   end
 
   def correct_user
