@@ -25,6 +25,12 @@ ul {
     font-weight: bold;
     width:350px;
     float:left;
-    padding-right: 50px;
-    text-align: center;
+    padding-left: 50px;
+    /*text-align: center;*/
+}
+h1 {
+}
+
+#retail {
+  text-decoration: line-through;
 }
