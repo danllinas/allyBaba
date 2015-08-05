@@ -11,7 +11,6 @@
   </script>
 
 <br>
-<div id= "header">
 <h1><%= @deal.title %><h1>
 </div>
   <div id= "section">
@@ -29,11 +28,11 @@
     </p>
   <% end %>
 </div>
-
-<div id="nav"><br><br><br><br>
+<br><br>
   <ul>
-    <li>Wholesale Price: $<%= @deal.wholesale_price %></li><br>
     <li id="Retail">Retail Price: $<%= @deal.retail_price %></li><br>
+    <li>Wholesale Price: $<%= @deal.wholesale_price %></li><br>
+
     <li>Organizer: <%= @deal.organizer.first_name %>
       / <%= @deal.organizer.email %></li><br>
       <li>Expiration: <%= l @deal.deal_expiration, format: :long %></li><br>

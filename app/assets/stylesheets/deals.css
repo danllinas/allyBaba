@@ -1,10 +1,16 @@
 /*// Place all the styles related to the deals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
+body {
+  background-color: #C4FFD6
+}
+
 h1 {
   text-align: center;
   font-family: "baskerville";
+  color: #62008F
 }
+
 img {
   width: 250px;
   height: auto;
@@ -12,13 +18,17 @@ img {
 p {
   font-family: "baskerville";
   text-align: center;
+  color: #62008F;
 }
 
 ul {
   display: inline;
   font-family: "baskerville";
 }
-
+#form {
+  text-align: center;
+  color: #62008F;
+}
 
 #section {
     font-family: "baskerville";
@@ -26,11 +36,17 @@ ul {
     width:350px;
     float:left;
     padding-left: 50px;
-    /*text-align: center;*/
+    border: groove;
 }
-h1 {
+.retail{
+  text-decoration: line-through;
 }
 
-#retail {
-  text-decoration: line-through;
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;
 }
