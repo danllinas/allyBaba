@@ -6,6 +6,7 @@ class DealsController < ApplicationController
       @response = Deal.search(params[:search])
     end
     @deals = Deal.all
+    @deal = Deal.new
   end
 
   def new
