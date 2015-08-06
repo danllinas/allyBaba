@@ -10,10 +10,57 @@
   <p>
     <%= label_tag(:search, "Enter the URL:") %>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= submit_tag "Search", name: nil %>
   </p>
 <% end %>
 
+<% if params[:search] && params[:search].blank? == false %>
+  <!--Testing Popups-->
+  <!-- <a id="open-popup" class="button" href="">
+    Magic Bulk Deal
+  </a> -->
+
+  <div class="popup" id="popup">
+    <div class="popup__inner">
+      <header class="popup__header">
+        <kbd>No Deal!</kbd><a href="#" class="popup__close"></a>
+      </header>
+      <%= image_tag(image, class: "profile__image", size: "124") %><!--
+
+      --><section class="profile__details">
+      <h1>Here is your automagical deal:</h1>
+        <ul class="profile__stats">
+          <li>
+            <h3 class="profile_stat__heading">Title</h3>
+            <div class="profile_stat__number"><%= title %></div>
+          </li><!--
+          --><li>
+            <h3 class="profile_stat__heading">Price Range</h3>
+            <div class="profile_stat__number">$<%= price_range %></div>
+          </li>
+        </ul>
+        <h2 class="profile__name"><%= description %></h2>
+        <ul class="social">
+          <li><a href="#"><i class="fa fa-github"></i></a></li><!--
+          --><li><a href="#"><i class="fa fa-instagram"></i></a></li><!--
+          --><li><a href="#"><i class="fa fa-twitter"></i></a></li><!--
+          --><li><a href="#"><i class="fa fa-bitbucket"></i></a></li><!--
+          --><li class="location"><i class="fa fa-map-marker"></i><span>Ommen, NL</span></li>
+        </ul>
+        <%= form_for @deal do |f| %>
+          <%= f.hidden_field :url, value: params[:search] %>
+          <%= f.hidden_field :title, value: title %>
+          <%= f.hidden_field :wholesale_price, value: price_range %>
+          <%#= f.hidden_field :image, value: Deal.image_from_url(image) %>
+          <%= f.submit "Create your deal!" %>
+        <% end  %>
+      </section>
+    </div><!-- /popup__inner -->
+  </div><!-- /popup -->
+
+<% end %>
+
+<!--End of Testing Popups-->
 
 <p>OR, you can: <%= link_to "Create A Deal!", new_deal_path %></p>
 
