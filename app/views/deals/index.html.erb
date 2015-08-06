@@ -1,9 +1,8 @@
 <%= provide(:title, "Deals") %>
 <body>
+  <br>
 <h1>DEALS</h1>
 <hr>
-<p>Find me in app/views/deals/index.html.erb</p>
-
 <p>
   Let us attempt to automagically create your deal!
 </p>
@@ -15,26 +14,24 @@
   </p>
 <% end %>
 
-<%# if params[:search] && params[:search].blank? == false %>
-  <%# 5.times do |item_number| %>
-
-  <%# end %>
-<%# end %>
-
 
 <p>OR, you can: <%= link_to "Create A Deal!", new_deal_path %></p>
 
 <ul>
   <% @deals.each do |deal| %>
     <li>
-      <div id="section">
-      <h1><%= link_to deal.title, deal %></h1>
-      <%= image_tag deal.image %><br>
-      Wholesale: $<%= deal.wholesale_price %><br>
-      <span class="retail">Retail: $<%= deal.retail_price %></span><br>
-      Expiration: <%= l deal.deal_expiration, format: :long %><br>
+     
+      <figcaption>
+      <%= image_tag deal.image %>
+      <h2><%= link_to deal.title, deal %></h2>
+      Expiration: <%= l deal.deal_expiration, format: :long %><br><br>
+      <span class="retail">$<%= deal.retail_price %></span>
+      |   $<span class="wholesale"><%= deal.wholesale_price %></span><br><br>
       <!-- Delivery: <%= l deal.estimated_delivery, format: :long %><br> -->
-      </div>
+
+</figcaption>
+<br>
+
   </li>
   <% end %>
 </ul>

@@ -1,29 +1,31 @@
 /*// Place all the styles related to the deals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
-body {
-  background-color: #C4FFD6
-}
 
 h1 {
   text-align: center;
-  font-family: "baskerville";
-  color: #62008F
+  font-family: "helvetica";
+  color: green;
+}
+h2 {
+  text-align: center;
 }
 
 img {
   width: 250px;
-  height: auto;
+  height: 250px;
 }
 p {
-  font-family: "baskerville";
+  font-family: "helvetica";
   text-align: center;
   color: #62008F;
 }
 
 ul {
   display: inline;
-  font-family: "baskerville";
+  font-family: "helvetica";
+  font-size: 20px;
+  text-align: center;
 }
 #form {
   text-align: center;
@@ -33,20 +35,31 @@ ul {
 #section {
     font-family: "baskerville";
     font-weight: bold;
-    width:350px;
+    width:250px;
     float:left;
-    padding-left: 50px;
-    border: groove;
+    font-size: 16px;
+    color: #62008F;
+    /*background-color: #F0F0F0;*/
 }
+
+figcaption {
+  font-family: "helvetica";
+  font-weight: bold;
+  width:250px;
+  height: 420px;
+  float:left;
+  font-size: 16px;
+  color: #62008F;
+  background-color: #F0F0F0;
+  margin-right: 25px;
+}
+
 .retail{
   text-decoration: line-through;
 }
-
-#nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:100px;
-    float:left;
-    padding:5px;
+.wholesale {
+  color:green;
+}
+ul {
+  background-color: #F0F0F0;
 }

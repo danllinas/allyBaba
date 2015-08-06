@@ -1,18 +1,18 @@
-
+<br>
 <div id="user_nav">
   <ul>
 	|  <li><%= link_to "Home", root_path %></li>
 
   |  <li><%= link_to "How It Works", how_it_works_path %></li>
 
-    |  <li><% if current_user %></li>
+    <li><% if current_user %></li>
     Hello, <%= link_to current_user.first_name, user_path(current_user.id) %></li>
     |  <li><%= link_to "Log out", logout_path, method: "delete" %></li>
   		<% else %>
     |  <li><%= link_to "Sign up", signup_path %></li>
          or
-    |  <li><%= link_to "log in", login_path %></li>
+    |  <li><%= link_to "Log in", login_path %></li>
       <% end %> |
-      <hr>
+
 </ul>
 </div>
