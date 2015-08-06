@@ -51,7 +51,7 @@
           <%= f.hidden_field :url, value: params[:search] %>
           <%= f.hidden_field :title, value: title %>
           <%= f.hidden_field :wholesale_price, value: price_range %>
-          <%= f.hidden_field :image, value: Deal.image_from_url(image) %>
+          <%= f.hidden_field :image, value: image_from_url(image) %>
           <%= f.submit "Create your deal!" %>
         <% end  %>
       </section>
