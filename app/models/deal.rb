@@ -22,7 +22,7 @@ class Deal < ActiveRecord::Base
     dom = Nokogiri::HTML(response.body)
   end
 
-  def image_from_url(url)
+  def self.image_from_url(url)
     self.image = URI.parse(url)
   end
 

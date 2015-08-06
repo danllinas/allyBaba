@@ -10,15 +10,15 @@
   <p>
     <%= label_tag(:search, "Enter the URL:") %>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= submit_tag "Search", name: nil %>
   </p>
 <% end %>
 
 <% if params[:search] && params[:search].blank? == false %>
   <!--Testing Popups-->
-  <a id="open-popup" class="button" href="">
+  <!-- <a id="open-popup" class="button" href="">
     Magic Bulk Deal
-  </a>
+  </a> -->
 
   <div class="popup" id="popup">
     <div class="popup__inner">
@@ -51,7 +51,7 @@
           <%= f.hidden_field :url, value: params[:search] %>
           <%= f.hidden_field :title, value: title %>
           <%= f.hidden_field :wholesale_price, value: price_range %>
-          <%= f.hidden_field :image, value: image_from_url(image) %>
+          <%#= f.hidden_field :image, value: Deal.image_from_url(image) %>
           <%= f.submit "Create your deal!" %>
         <% end  %>
       </section>
