@@ -1,7 +1,14 @@
 /*// Place all the styles related to the deals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
+body{
+  background-color: #F0F0F0;
+}
 
+p a {
+  color: green;
+  text-decoration: underline;
+}
 h1 {
   text-align: center;
   font-family: "helvetica";
@@ -9,6 +16,9 @@ h1 {
 }
 h2 {
   text-align: center;
+}
+h2 a {
+  color:green;
 }
 
 img {
@@ -18,15 +28,21 @@ img {
 p {
   font-family: "helvetica";
   text-align: center;
-  color: #62008F;
+  color: purple;
+  background-color: #F0F0F0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 25px;
 }
 
 ul {
   display: inline;
   font-family: "helvetica";
   font-size: 20px;
-  text-align: center;
+  /*text-align: center;*/
+  width: 250px;
 }
+
 #form {
   text-align: center;
   color: #62008F;
@@ -39,7 +55,20 @@ ul {
     float:left;
     font-size: 16px;
     color: #62008F;
-    /*background-color: #F0F0F0;*/
+}
+
+#nav {
+
+}
+
+.magic {
+  text-align: center;
+  background-color: #F0F0F0;
+  font-family: "helvetica";
+  color:purple;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 0px;
 }
 
 figcaption {
@@ -52,6 +81,15 @@ figcaption {
   color: #62008F;
   background-color: #F0F0F0;
   margin-right: 25px;
+  margin-top: 0px;
+  padding-top: 0px;
+  border:groove;
+  border-color: purple;
+
+}
+#show {
+  text-align: left;
+  color: green;
 }
 
 .retail{
@@ -60,6 +98,7 @@ figcaption {
 .wholesale {
   color:green;
 }
-ul {
-  background-color: #F0F0F0;
+
+span {
+  text-align: center;
 }

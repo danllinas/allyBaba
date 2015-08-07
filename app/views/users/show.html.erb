@@ -34,7 +34,7 @@
 <br>
 <h1>Deals I've Joined</h1>
 <% current_user.orders.each do |order| %>
-<div id="section">
+<figcaption>
   <ul>
     <li><%= order.deal.title %></li><br>
     <%= image_tag order.deal.image %><br>
@@ -49,7 +49,7 @@
     <li>Progress: <%= number_to_percentage(progress( order.deal.total_bids, order.deal.minimum_bids), precision: 0) %></li><br>
   <br>
   </ul>
-</div>
+</figcaption>
   <br>
 <% end %>
 <hr>

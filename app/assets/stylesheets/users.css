@@ -1,16 +1,6 @@
 #my_deal {
   word-wrap: break-word;
 }
-#section {
-    font-family: "baskerville";
-    font-weight: bold;
-    width:350px;
-    /*float:left;*/
-    /*padding-right: 50px;*/
-    /*text-align: center;*/
-    word-wrap: break-word;
-}
-
 #Retail {
   text-decoration: line-through;
 }
