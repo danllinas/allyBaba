@@ -40,6 +40,7 @@
   / <%= @deal.organizer.email %><br>
   Expiration: <%= l @deal.deal_expiration, format: :long %><br>
   Delivery: <%= l @deal.estimated_delivery, format: :long %>
+  Description: <%= @deal.description %>
 </div>
 
 <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count">

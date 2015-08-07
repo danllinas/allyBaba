@@ -4,19 +4,19 @@
       <%= render 'shared/error_messages_deal' %>
 
       <%= f.label :url %>
-      <%= f.url_field :url %><br><br>
+      <%= f.url_field :url, value: params[:search] %><br><br>
 
       <%= f.label :title %>
-      <%= f.text_field :title %><br><br>
+      <%= f.text_field :title, value: title %><br><br>
 
       <%= f.label :image %>
-      <%= f.file_field :image %><br><br>
+      <%= f.url_field :image, value: image%><br><br>
 
       <%= f.label :retail_price_cents %>
       <%= f.text_field :retail_price_cents %><br><br>
 
       <%= f.label :wholesale_price_cents %>
-      <%= f.text_field :wholesale_price_cents %><br><br>
+      <%= f.text_field :wholesale_price_cents, value: price_range %><br><br>
 
       <%= f.label :minimum_bids %>
       <%= f.number_field :minimum_bids %><br><br>
@@ -28,7 +28,7 @@
       <%= f.select :delivery_method, ['USPS', 'UPS', 'FedEX', 'Shyp', 'Local Pickup'] %><br>
 
       <%= f.label :description %>
-      <%= f.text_area :description %><br>
+      <%= f.text_area :description, value: description %><br>
 
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
