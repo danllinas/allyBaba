@@ -3,17 +3,17 @@
 <!--
 <div class= "nav_wrapper">
 <div id="user_nav"> -->
-  <ul>
+<ul>
   <% if current_user %></li>
-  <li class="purple"><%= link_to "Log out", logout_path, method: "delete" %></li>
-  		<% else %>
-  <li class="purple"><%= link_to "Sign up", signup_path %></li>
-         or
-  <li class="purple"><%= link_to "Log in", login_path %></li>
-      <% end %>
-  <li class="green"> Hello,</style> <%= link_to current_user.first_name, user_path(current_user.id) %></li>
-  <li class="purple"><%= link_to "How It Works", how_it_works_path %></li>
-  <li class="green"><%= link_to "Home", root_path %></li>
+    <li class="purple"><%= link_to "Log out", logout_path, method: "delete" %></li>
+    <li class="green"> Hello,</style> <%= link_to current_user.first_name, user_path(current_user.id) %></li>
+  <% else %>
+    <li class="purple"><%= link_to "Sign up", signup_path %></li>
+    <li class="purple"><%= link_to "Log in", login_path %></li>
+  <% end %>
 
-<br><br>
+    <li class="purple"><%= link_to "How It Works", how_it_works_path %></li>
+    <li class="green"><%= link_to "Home", root_path %></li>
+
+  <br><br>
 </ul>
