@@ -1,5 +1,5 @@
 <% provide(:title, @user.first_name) %>
-<h1>My Deals</h1>
+<!-- <h1>My Deals</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 <div id="my_info"
 <%= @user.first_name %><br>
@@ -7,9 +7,11 @@
 <%= @user.email %><br>
 <%= link_to 'Edit User Information', edit_user_path %><br>
 <%= link_to 'Delete Account', current_user, method: :delete, data: { confirm: 'Are you sure you want to destroy your account?'} %>
-</div>
+</div> -->
 
 <p><%= link_to "Create A Deal!", new_deal_path %></p>
+
+<br>
 
 <% current_user.deals.each do |deal| %>
 <div id="my_deal">
@@ -28,31 +30,26 @@
   </div>
 <br><br>
 <% end %>
+
+<br>
+<h1>Deals I've Joined</h1>
+<% current_user.orders.each do |order| %>
+<figcaption>
+  <ul>
+    <li><%= order.deal.title %></li><br>
+    <%= image_tag order.deal.image %><br>
+    <li>URL: <%= order.deal.url %></li><br>
+    <li>Expiration: <%= order.deal.deal_expiration %></li><br>
+    <li>Wholesale Price: <%= order.deal.wholesale_price %></li><br>
+    <li id= "Retail">Retail Price: <%= order.deal.retail_price %></li><br>
+    <li>Message Organizer: <%= link_to order.deal.organizer.email %></li><br>
+    <li>Esitmated Delivery: <%= l order.deal.estimated_delivery, format: :long %></li><br>
+    <li>Minimum Bids: <%= order.deal.minimum_bids %></li><br>
+    <li>Total Bids: <%= order.deal.total_bids %></li><br>
+    <li>Progress: <%= number_to_percentage(progress( order.deal.total_bids, order.deal.minimum_bids), precision: 0) %></li><br>
+  <br>
+  </ul>
+</figcaption>
+  <br>
+<% end %>
 <hr>
-<div>
-  <h1>Deal I've Joined</h1>
-    <div>
-    <ul>
-      <% current_user.orders.each do |order| %>
-        <% if order.deal.organizer == order.buyer %>
-          <% next %>
-        <% end %>
-        <li>
-          <div id="section">
-            <%= image_tag order.deal.image %><br>
-            Deal Title: <%= order.deal.title %><br>
-            URL to deal origin: <%= order.deal.url %><br>
-            Deal Expiration: <%= order.deal.deal_expiration %><br>
-            Wholesale Price: <%= order.deal.wholesale_price %><br>
-            Retail Price: <%= order.deal.retail_price %><br>
-            Send Message to Organizer: <%= link_to order.deal.organizer.email %><br>
-            Esitmated Delivery: <%= l order.deal.estimated_delivery, format: :long %><br>
-            Minimum Bids: <%= order.deal.minimum_bids %><br>
-            Total Bids: <%= order.deal.total_bids %><br>
-            Progress: <%= number_to_percentage(progress( order.deal.total_bids, order.deal.minimum_bids), precision: 0) %>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div>

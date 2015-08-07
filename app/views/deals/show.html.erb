@@ -10,41 +10,43 @@
   }(document, 'script', 'facebook-jssdk'));
   </script>
 
-<br>
-<div id= "header">
+<br><br>
 <h1><%= @deal.title %><h1>
 </div>
-  <div id= "section">
+  <div id="section">
   <%= image_tag @deal.image %><br>
-  <%= @deal.url %><br>
   <% if logged_in? %>
     <% if current_user.id == @deal.organizer.id %>
-      <%= link_to 'Edit Deal', edit_deal_path %><br>
-      <%= link_to 'Delete deal', @deal, method: :delete, data: { confirm: 'Are you sure you want to destroy this deal?'} %>
+      <%= link_to 'Edit', edit_deal_path %> /
+      <%= link_to 'Delete', @deal, method: :delete, data: { confirm: 'Are you sure you want to delete this deal?'} %>
     <% elsif current_user.orders.find_by(deal_id: @deal.id) %>
       <h2>You already joined this deal!</h2>
     <% else %>
-      <%= link_to "Join this deal!", new_deal_order_path(@deal.id) %>
+      <p class="join"><%= link_to "Join this deal!", new_deal_order_path(@deal.id) %>
     <% end %>
   <% else %>
     <p>
       Go <%= link_to "login", login_path %> to jump on this deal!
     </p>
   <% end %>
-</div>
 
-<div id="nav"><br><br><br><br>
-  Wholesale Price: <%= @deal.wholesale_price %><br>
-  Retail Price: <%= @deal.retail_price %><br>
-  Organizer: <%= @deal.organizer.first_name %>
-  / <%= @deal.organizer.email %><br>
-  Expiration: <%= l @deal.deal_expiration, format: :long %><br>
-  Delivery: <%= l @deal.estimated_delivery, format: :long %>
-  Description: <%= @deal.description %>
+<br>
+<div id="nav_show">
+  <ul>
+    <li id="Retail">$<%= @deal.retail_price %></li>
+    <li class="show_nav">$<%= @deal.wholesale_price %></li>
+    <li class="show_nav">Organizer: <%= @deal.organizer.first_name %>
+      / <%= @deal.organizer.email %></li><br>
+    <li class="show_nav">Expiration: <%= l @deal.deal_expiration, format: :long %></li><br>
+    <li class="show_nav">Delivery: <%= l @deal.estimated_delivery, format: :long %></li><br>
+    <li class="show_nav"><%= @deal.url %></li><br>
+  </ul>
 </div>
 
 <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count">
 </div>
+
+
 
 </body>
 </html>

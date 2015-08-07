@@ -1,9 +1,6 @@
 #my_deal {
-  float: left;
-  padding-right: 50px;
-  text-align: center;
+  word-wrap: break-word;
 }
-
-div {
-  text-align: center;
+#Retail {
+  text-decoration: line-through;
 }

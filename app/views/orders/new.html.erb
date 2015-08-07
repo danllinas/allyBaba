@@ -1,15 +1,20 @@
-<h1>Here is your deal summary:</h1>
+<h1>Deal summary:</h1>
+<div id="header">
+<%= @deal.title %><br>
 <%= image_tag @deal.image %><br>
-Original Deal URL: <%= @deal.url %><br>
-Deal Title: <%= @deal.title %><br>
-Retail Price: $<%= @deal.retail_price %><br>
-Wholesale Price: $<%= @deal.wholesale_price %><br>
-Minimum Bids: <%= @deal.minimum_bids %><br>
-Current Number of Bids: <%= @deal.total_bids %><br>
-Deal Expiration Date: <%= l @deal.deal_expiration, format: :long %><br>
-Estimated Delivery: <%= l @deal.estimated_delivery, format: :long %><br>
-
+<div id="section">
+  <ul>
+<li id="retail">Retail Price: $<%= @deal.retail_price %></li><br>
+<li>Wholesale Price: $<%= @deal.wholesale_price %></li><br>
+<li>URL: <%= @deal.url %></li><br>
+<li>Minimum Bids: <%= @deal.minimum_bids %></li><br>
+<li>Current Number of Bids: <%= @deal.total_bids %></li><br>
+<li>Deal Expiration Date: <%= l @deal.deal_expiration, format: :long %></li><br>
+<li>Estimated Delivery: <%= l @deal.estimated_delivery, format: :long %></li><br>
 <p>
+
+ <%= button_to "Join Deal", deal_orders_path %>
+
   Ready? Click here to join this deal! <%#= button_to "Join Deal", deal_orders_path %>
 </p>
 <%= render 'form' %>

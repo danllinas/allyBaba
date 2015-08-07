@@ -27,17 +27,21 @@
 
 <p>OR, you can: <%= link_to "Create A Deal!", new_deal_path %></p>
 
-<ul>
-  <% @deals.each do |deal| %>
-    <li>
-      <div id="section">
-      <h1><%= link_to deal.title, deal %></h1>
-      <%= image_tag deal.image %><br>
-      Wholesale: $<%= deal.wholesale_price %><br>
-      Retail: $<%= deal.retail_price %><br>
-      Expiration: <%= l deal.deal_expiration, format: :long %><br>
-      Delivery: <%= l deal.estimated_delivery, format: :long %><br>
-      </div>
-  </li>
-  <% end %>
-</ul>
+<!-- <ul> -->
+  <% @deals.each do |deal| %>
+    <!-- <li> -->
+     
+      <figcaption>
+      <%= image_tag deal.image %>
+      <h2><%= link_to deal.title, deal %></h2>
+      Expiration: <%= l deal.deal_expiration, format: :long %><br><br>
+      <span class="retail">$<%= deal.retail_price %></span>
+      |   $<span class="wholesale"><%= deal.wholesale_price %></span><br><br>
+      <!-- Delivery: <%= l deal.estimated_delivery, format: :long %><br> -->
+
+      </figcaption>
+      <!-- <br> -->
+
+  <!-- </li> -->
+  <% end %>
+<!-- </ul> -->
