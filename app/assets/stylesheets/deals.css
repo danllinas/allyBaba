@@ -2,12 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
 body{
-  background-color: #F0F0F0;
+  background-color: white;
 }
 
 p a {
   color: green;
-  text-decoration: underline;
+  text-decoration: none;
+  font-size: 12;
 }
 h1 {
   text-align: center;
@@ -16,9 +17,11 @@ h1 {
 }
 h2 {
   text-align: center;
+  text-decoration: none;
 }
 h2 a {
   color:green;
+  text-decoration: none;
 }
 
 img {
@@ -29,7 +32,6 @@ p {
   font-family: "helvetica";
   text-align: center;
   color: purple;
-  background-color: #F0F0F0;
   margin-top: 0px;
   margin-bottom: 0px;
   padding-bottom: 25px;
@@ -41,6 +43,8 @@ ul {
   font-size: 20px;
   /*text-align: center;*/
   width: 250px;
+  padding-right: 140px;
+  text-decoration: none;
 }
 
 #form {
@@ -73,18 +77,19 @@ ul {
 
 figcaption {
   font-family: "helvetica";
-  font-weight: bold;
+  font-weight: normal;
   width:250px;
   height: 420px;
   float:left;
-  font-size: 16px;
+  font-size: 12px;
   color: #62008F;
   background-color: #F0F0F0;
   margin-right: 25px;
+  margin-left: 40px;
   margin-top: 0px;
   padding-top: 0px;
-  border:groove;
-  border-color: purple;
+/*  border:groove;
+  border-color: purple;*/
 
 }
 #show {
