@@ -2,14 +2,15 @@ class DealsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :update, :new, :edit]
 
   def index
-    if params[:search]
-      @response = Deal.search(params[:search])
-    end
+
     @deals = Deal.all
     @deal = Deal.new
   end
 
   def new
+    if params[:search]
+      @response = Deal.search(params[:search])
+    end
     @deal = Deal.new
     @deal.orders.build
   end
