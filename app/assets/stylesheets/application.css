@@ -82,3 +82,27 @@ a {
 .purple {
   background-color: purple;
 }
+
+#trigger:hover {
+  cursor: pointer;
+}
+
+.modal {
+  width: 100%;
+  /*display: none;*/
+  position: fixed;
+  top:100px;
+  left:25%;
+  right:25%;
+}
+
+.login {
+  display:inline-block;
+  width: 48%;
+  /*float: left;*/
+}
+
+.sign_up {
+  display:inline-block;
+  width: 48%;
+}

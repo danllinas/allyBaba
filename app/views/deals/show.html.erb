@@ -1,19 +1,71 @@
-<html>
-<body>
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1666401163591465";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1666401163591465";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
 
-<br><br>
-<h1><%= @deal.title %><h1>
+<div class="modal">
+  <div class="login">
+    <%= form_for(:session, url: login_path, remote: true) do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email %><br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %><br>
+
+      <%= f.label :remember_me do %>
+        <%= f.check_box :remember_me %>
+        <span>Remember me on this computer</span><br>
+      <% end %>
+
+      <%= f.submit 'Log in' %>
+    <% end %>
+  </div>
+  <div class="sign_up">
+    <%= form_for(@user, remote: true) do |f| %>
+      <%= render 'shared/error_messages_user' %>
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %><br>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %><br>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %><br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %><br>
+
+      <%= f.label :password_confirmation, "Password Confirmation" %>
+      <%= f.password_field :password_confirmation %><br>
+
+      <%= f.label :address1, "Shipping Address" %>
+      <%= f.text_field :address1 %><br>
+
+      <%= f.label :address2, 'Shipping Address 2' %>
+      <%= f.text_field :address2 %><br>
+
+      <%= f.label :city %>
+      <%= f.text_field :city %><br>
+
+      <%= f.label :state %>
+      <%= select_tag :state, options_for_select(us_states)%><br>
+
+      <%= f.label :zipcode %>
+      <%= f.text_field :zipcode %><br>
+
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
-  <div id="section">
+
+<div id="section">
+  <h1><%= @deal.title %></h1>
   <%= image_tag @deal.image %><br>
   <% if logged_in? %>
     <% if current_user.id == @deal.organizer.id %>
@@ -22,31 +74,27 @@
     <% elsif current_user.orders.find_by(deal_id: @deal.id) %>
       <h2>You already joined this deal!</h2>
     <% else %>
-      <p class="join"><%= link_to "Join this deal!", new_deal_order_path(@deal.id) %>
+      <p class="join"><%= link_to "Join this deal!", new_deal_order_path(@deal.id) %><!--create a login/register popup. Submit Order Form with all info from here. Show Stripe button to purchase with fewer steps.-->
     <% end %>
   <% else %>
     <p>
-      Go <%= link_to "login", login_path %> to jump on this deal!
+      Go <span id="trigger">login</span> to jump on this deal!
     </p>
   <% end %>
-
-<br>
+<!--Fix layout and formatting.-->
 <div id="nav_show">
   <ul>
-    <li id="Retail">$<%= @deal.retail_price %></li>
-    <li class="show_nav">$<%= @deal.wholesale_price %></li>
+    <li id="Retail">$<%= @deal.retail_price %>
+    <li class="show_nav">$<%= @deal.wholesale_price %>
     <li class="show_nav">Organizer: <%= @deal.organizer.first_name %>
-      / <%= @deal.organizer.email %></li><br>
-    <li class="show_nav">Expiration: <%= l @deal.deal_expiration, format: :long %></li><br>
-    <li class="show_nav">Delivery: <%= l @deal.estimated_delivery, format: :long %></li><br>
-    <li class="show_nav"><%= @deal.url %></li><br>
+      / <%= @deal.organizer.email %></li>
+    <li class="show_nav">Expiration: <%= l @deal.deal_expiration, format: :long %></li>
+    <li class="show_nav">Delivery: <%= l @deal.estimated_delivery, format: :long %></li>
+    <li class="show_nav"><%= @deal.url %></li>
+    <li class="show_nav">Progress: <%= number_to_percentage(progress( @deal.total_bids, @deal.minimum_bids), precision: 0) %></li>
+    <li class="show_nav">Description: <%= @deal.description %></li>
   </ul>
 </div>
 
 <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count">
 </div>
-
-
-
-</body>
-</html>

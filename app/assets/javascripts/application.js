@@ -14,3 +14,47 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function ready() {
+  $('#trigger').on("click", function() {
+    $('.modal').show();
+  });
+};
+
+// $(ready);
+// $(document).on('page:load', ready)
+//can also do:
+$(document).on('ready page:load', ready)
+
+
+
+// var main = function(){
+//   $('.showView').hover(function(){
+//     $('a').css("fontSize", "20px");
+//   },
+//   function(){
+//     $('a').css("fontSize", "16px");
+//   });
+// }
+//
+// $(document).ready(main);
+
+
+// $(document).ready(function() {
+//  $('#type').on('mouseenter', function(){
+//    $('#slider').slideToggle();
+//  });
+//
+//  $('td').on('mouseenter', function(){
+//    $(this).find('a').addClass('pulse');
+//  });
+//  $('td').on('mouseleave', function(){
+//    $(this).find('a').removeClass('pulse');
+//  });
+//
+//  setInterval(function(){
+//    $('.shake').effect('shake', {direction: 'right'});
+//  },
+//  10000
+//  );
+// });
