@@ -2,7 +2,7 @@ class DealsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :update, :new, :edit]
 
   def index
-
+    @user = User.new
     @deals = Deal.all
     @deal = Deal.new
   end

@@ -115,3 +115,9 @@ span {
   margin-left: 10px;
   color: black;
 }
+
+.prices {
+  margin-left: 26%;
+  font-size: 18px;
+  font-weight: 900;
+}

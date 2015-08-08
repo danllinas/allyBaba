@@ -1,4 +1,9 @@
 <%= provide(:title, "Deals") %>
+<div class="modal">
+  <%= render 'sessions/form' %>
+  <%= render 'users/form' %>
+</div>
+
 <div class="tag-line">
   Join others. Buy in bulk. Pay wholesale.
 </div>
@@ -11,9 +16,11 @@
       <%= link_to image_tag(deal.image), deal %>
       <h2><%= link_to(truncate(deal.title, length: 30, seperator: ' '), deal)  %></h2>
       <div class="deal-detail">
-        Expiration: <%= l deal.deal_expiration, format: :long %><br><br>
-        <span class="retail">$<%= deal.retail_price %></span>
-        |   $<span class="wholesale"><%= deal.wholesale_price %></span><br><br>
+        Time Remaining: <%= ((deal.deal_expiration - deal.created_at) / 86400).to_i.to_s %> days<br><br>
+        <div class="prices">
+          <span class="retail">$<%= deal.retail_price %></span>
+          |   <span class="wholesale">$<%= deal.wholesale_price %></span><br><br>
+        </div>
         <div class="progress-meter">
         	<span class="progress" style="width: <%= number_to_percentage(progress( deal.total_bids, deal.minimum_bids), precision: 0) %>;"></span>
         </div>
