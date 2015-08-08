@@ -47,8 +47,8 @@ a {
   width:100%;
 }*/
 
-body {
-  font-family: 'helvetica';
+* {
+  font-family: 'Lato';
 }
 
 header {
@@ -60,7 +60,6 @@ header {
   text-align: right;
   height: 100px;
   padding-top: 20px;
-
 }
 
 .logo{
@@ -80,7 +79,16 @@ header {
 }
 
 .purple a {
+  margin-top: 25px;
   font-size: 16px;
+  text-decoration: none;
+  /*display: inline-block;*/
+  padding: 0px 15px;
+  border-right: 2px solid black;
+}
+body > header > ul > li {
+  margin-top: 25px;
+  display: inline-block;
 }
 
 #trigger:hover {
@@ -105,4 +113,17 @@ header {
 .sign_up {
   display:inline-block;
   width: 48%;
+}
+
+.wrapper {
+  width: 100%;
+  display: table;
+}
+
+.deal-box {
+  width: 23%;
+  margin-left: 0;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  display: inline-block;
 }

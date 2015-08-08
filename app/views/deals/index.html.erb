@@ -1,7 +1,7 @@
 <%= provide(:title, "Deals") %>
-<hr>
+
 <h2>Latest Deals</h2>
-<hr>
+
 <% if params[:search] && params[:search].present? %>
   <h2>Here's what BULK! could carry away from the site!</h2>
   <p>
@@ -25,13 +25,22 @@
 <% end %>
 
 <p>OR, you can: <%= link_to "Create A Deal!", new_deal_path %></p>
-<% @deals.each do |deal| %>
-  <figcaption>
-    <%= link_to image_tag(deal.image), deal %>
-    <h2><%= link_to deal.title, deal %></h2>
-    Expiration: <%= l deal.deal_expiration, format: :long %><br><br><!--Make expiration "Time left Countdown."-->
-    <span class="retail">$<%= deal.retail_price %></span>
-    |   $<span class="wholesale"><%= deal.wholesale_price %></span><br><br>
-    Progress: <%= number_to_percentage(progress( deal.total_bids, deal.minimum_bids), precision: 0) %>
-  </figcaption>
-<% end %>
+
+<div class="wrapper">
+
+
+        <% @deals.each do |deal| %>
+        <div class="deal-box">
+          <figcaption>
+          <%= link_to image_tag(deal.image), deal %>
+          <h2><%= link_to(truncate(deal.title, length: 50, seperator: ' '), deal)  %></h2>
+          Expiration: <%= l deal.deal_expiration, format: :long %><br><br><!--Make expiration "Time left Countdown."-->
+          <span class="retail">$<%= deal.retail_price %></span>
+          |   $<span class="wholesale"><%= deal.wholesale_price %></span><br><br>
+          Progress: <%= number_to_percentage(progress( deal.total_bids, deal.minimum_bids), precision: 0) %>
+          </figcaption>
+          </div>
+        <% end %>
+
+
+</div>
