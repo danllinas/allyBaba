@@ -127,3 +127,21 @@ body > header > ul > li {
   margin-bottom: 1%;
   display: inline-block;
 }
+
+h3 {
+  margin-left: 3.5%;
+}
+
+.progress-meter {
+  height: 17px;
+  background-color: rgba(85, 85, 85, 0.37);
+  margin-right: 4%;
+  margin-top: -2%;
+  margin-bottom: 3%;
+}
+
+span.progress {
+  height: 17px;
+  display: inline-block;
+  background-color: purple;
+}
