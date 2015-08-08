@@ -201,3 +201,10 @@ button.create-button {
   text-decoration: none;
   font-size: 160%;
 }
+
+.tag-line {
+  margin-left: 9%;
+  font-style: italic;
+  color: rgba(50, 45, 45, 0.84);
+  font-size: 20px;
+}
