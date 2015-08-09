@@ -1,40 +1,58 @@
-<div>
-  <div>
-    <%= form_for(@deal) do |f| %>
-      <%= render 'shared/error_messages_deal' %>
+<div class="manual-deal">
+  <%= form_for(@deal) do |f| %>
+    <%= render 'shared/error_messages_deal' %>
+  <div class="form-labels">
+  <%= f.label :url %>
+  <%= f.label :title %>
+  <%= f.label :image %>
+  <%= f.label :retail_price_cents %>
+  <%= f.label :wholesale_price_cents %>
+  <%= f.label :minimum_bids %>
+  <%= f.label :estimated_delivery %>
+  <%= f.label :delivery_method %>
+  <%= f.label :description %>
 
-      <%= f.label :url %>
-      <%= f.url_field :url %><br><br>
 
-      <%= f.label :title %>
-      <%= f.text_field :title %><br><br>
 
-      <%= f.label :image %>
-      <%= f.file_field :image %><br><br>
 
-      <%= f.label :retail_price_cents %>
-      <%= f.text_field :retail_price_cents %><br><br>
-
-      <%= f.label :wholesale_price_cents %>
-      <%= f.text_field :wholesale_price_cents %><br><br>
-
-      <%= f.label :minimum_bids %>
-      <%= f.number_field :minimum_bids %><br><br>
-
-      <%= f.label :estimated_delivery %>
-      <%= f.date_field :estimated_delivery %><br><br>
-
-      <%= f.label :delivery_method %>
-      <%= f.select :delivery_method, ['USPS', 'UPS', 'FedEX', 'Shyp', 'Local Pickup'] %><br>
-
-      <%= f.label :description %>
-      <%= f.text_area :description %><br>
-
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="Charge"
-              data-amount="<%=@deal.wholesale_price_cents%>">
-      </script>
-    <% end %>
   </div>
+
+  <div class="form-fields">
+
+
+
+  </div>
+
+    <%= f.url_field :url %><br><br>
+
+
+    <%= f.text_field :title %><br><br>
+
+
+    <%= f.file_field :image %><br><br>
+
+
+    <%= f.text_field :retail_price_cents %><br><br>
+
+
+    <%= f.text_field :wholesale_price_cents %><br><br>
+
+
+    <%= f.number_field :minimum_bids %><br><br>
+
+
+    <%= f.date_field :estimated_delivery %><br><br>
+
+
+    <%= f.select :delivery_method, ['USPS', 'UPS', 'FedEX', 'Shyp', 'Local Pickup'] %><br>
+
+
+    <%= f.text_area :description %><br>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Charge"
+            data-amount="<%=@deal.wholesale_price_cents%>">
+    </script>
+  <% end %>
 </div>

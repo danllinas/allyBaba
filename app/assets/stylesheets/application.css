@@ -109,6 +109,7 @@ body > header > ul > li:nth-child(3) {
   /* display: inline-block; */
   padding: 0px 20px 0px 0px;
   color: purple;
+  background-color: none;
 }
 
 #trigger:hover {
@@ -282,4 +283,21 @@ button.create-button {
   font-style: italic;
   color: rgba(50, 45, 45, 0.84);
   font-size: 20px;
+}
+
+hr {
+  width: 94%;
+  margin-top: 6%;
+  margin-bottom: -3%;
+  border-top: 1px dotted;
+}
+
+span.text {
+  font-size: .9em;
+  padding-left: 1%;
+  text-decoration: none !important;
+}
+
+.create {
+  text-decoration: underline;
 }

@@ -16,8 +16,7 @@
   <div class="conditional-text">
     <% if logged_in? %>
       <% if current_user.id == @deal.organizer.id %>
-        <%= link_to 'Edit', edit_deal_path %> /
-        <%= link_to 'Delete', @deal, method: :delete, data: { confirm: 'Are you sure you want to delete this deal?'} %>
+        <button class="join-button deal"><%= link_to 'Edit This Deal', edit_deal_path %></button>
       <% elsif current_user.orders.find_by(deal_id: @deal.id) %>
         <h2>You already joined this deal!</h2>
       <% else %>
@@ -26,9 +25,7 @@
 
       <% end %>
     <% else %>
-      <p>
-        Go <span id="trigger">login</span> to jump on this deal!
-      </p>
+          <button class="join-button deal"><nav id="trigger">Join this deal!</nav></button>
     <% end %>
   </div>
   <div class="deal-text">
@@ -44,9 +41,9 @@
   <div class="description-text">
     Organizer: <%= @deal.organizer.first_name.capitalize %><br>
     Expiration: <%= l @deal.deal_expiration, format: :long %><br>
-    Delivery: <%= l @deal.estimated_delivery, format: :long %><br>
+    Estimated Delivery: <%= l @deal.estimated_delivery, format: :long %><br>
     Original Deal: <%= @deal.url %><br><br><br>
-    Description: <%= @deal.description %><br><br>
+    Description:<br><br> <%= @deal.description %><br><br>
   </div>
 </div>
 

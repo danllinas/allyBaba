@@ -9,47 +9,51 @@
 <%= link_to 'Delete Account', current_user, method: :delete, data: { confirm: 'Are you sure you want to destroy your account?'} %>
 </div> -->
 
-<p><%= link_to "Create A Deal!", new_deal_path %></p>
-
-<br>
-
-<% current_user.deals.each do |deal| %>
-<div id="my_deal">
-    <%= link_to deal.title, deal %> <br>
-    <%= image_tag deal.image %><br>
-    URL: <%= deal.url %><br>
-    Deal expiration: <%= l deal.deal_expiration, format: :long %><br>
-    Wholesale Price: <%= deal.wholesale_price %><br>
-    Retail Price: <%= deal.retail_price %><br>
-    Organizer: <%= deal.organizer.first_name %><br>
-    Contact Organizer: <%= deal.organizer.email %><br>
-    Estimated Delivery: <%= l deal.estimated_delivery, format: :long %><br>
-    Minimum Bids: <%= deal.minimum_bids %><br>
-    Total Bids: <%= deal.total_bids %><br>
-    Progress: <%= number_to_percentage(progress( deal.total_bids, deal.minimum_bids), precision: 0) %>
+<button class="create-button"><%= link_to "Create A Deal!", new_deal_path %></button>
+<h3>My Deals</h3>
+<div class="wrapper">
+  <% current_user.deals.each do |deal| %>
+  <div class="deal-box">
+    <figcaption>
+      <%= link_to image_tag(deal.image), deal %>
+      <h2><%= link_to(truncate(deal.title, length: 30, seperator: ' '), deal)  %></h2>
+      <div class="deal-detail">
+        <div class="prices">
+          <span class="retail">$<%= deal.retail_price %></span>
+          |   <span class="wholesale">$<%= deal.wholesale_price %></span><br><br>
+        </div>
+        <div class="progress-meter">
+        	<span class="progress" style="width: <%= number_to_percentage(progress( deal.total_bids, deal.minimum_bids), precision: 0) %>;"></span>
+        </div>
+        Progress: <%= number_to_percentage(progress( deal.total_bids, deal.minimum_bids), precision: 0) %><br>
+        Time Remaining: <%= ((deal.deal_expiration - deal.created_at) / 86400).to_i.to_s %> days
+      </div>
+    </figcaption>
   </div>
-<br><br>
-<% end %>
+  <% end %>
+</div>
 
-<br>
-<h1>Deals I've Joined</h1>
-<% current_user.orders.each do |order| %>
-<figcaption>
-  <ul>
-    <li><%= order.deal.title %></li><br>
-    <%= image_tag order.deal.image %><br>
-    <li>URL: <%= order.deal.url %></li><br>
-    <li>Expiration: <%= order.deal.deal_expiration %></li><br>
-    <li>Wholesale Price: <%= order.deal.wholesale_price %></li><br>
-    <li id= "Retail">Retail Price: <%= order.deal.retail_price %></li><br>
-    <li>Message Organizer: <%= link_to order.deal.organizer.email %></li><br>
-    <li>Esitmated Delivery: <%= l order.deal.estimated_delivery, format: :long %></li><br>
-    <li>Minimum Bids: <%= order.deal.minimum_bids %></li><br>
-    <li>Total Bids: <%= order.deal.total_bids %></li><br>
-    <li>Progress: <%= number_to_percentage(progress( order.deal.total_bids, order.deal.minimum_bids), precision: 0) %></li><br>
-  <br>
-  </ul>
-</figcaption>
-  <br>
-<% end %>
 <hr>
+
+<h3>Joined Deals</h3>
+<div class="wrapper">
+  <% current_user.orders.each do |order| %>
+  <div class="deal-box">
+    <figcaption>
+      <%= link_to image_tag(order.deal.image), deal_path(order.deal_id) %>
+      <h2><%= link_to(truncate(order.deal.title, length: 30, seperator: ' '), deal_path(order.deal_id))  %></h2>
+      <div class="deal-detail">
+        <div class="prices">
+          <span class="retail">$<%= order.deal.retail_price %></span>
+          |   <span class="wholesale">$<%= order.deal.wholesale_price %></span><br><br>
+        </div>
+        <div class="progress-meter">
+        	<span class="progress" style="width: <%= number_to_percentage(progress( order.deal.total_bids, order.deal.minimum_bids), precision: 0) %>;"></span>
+        </div>
+        Progress: <%= number_to_percentage(progress( order.deal.total_bids, order.deal.minimum_bids), precision: 0) %><br>
+        Time Remaining: <%= ((order.deal.deal_expiration - order.deal.created_at) / 86400).to_i.to_s %> days
+      </div>
+    </figcaption>
+  </div>
+  <% end %>
+</div>

@@ -201,3 +201,11 @@ div.deal-wrapper > div.deal-text > span.wholesale {
   margin-left: 2%;
   margin-top: -1%;
 }
+
+nav#trigger {
+  color: rgba(50, 45, 45, 0.84);
+  text-decoration: none;
+  font-size: 160%;
+  padding: 0px;
+  margin-top: 0;
+}

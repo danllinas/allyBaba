@@ -1,5 +1,5 @@
 <%= provide(:title, "New Deal") %>
-<h1>Create a New Deal</h1>
+<h2>Create a New Deal</h2>
 
 <% if params[:search] && params[:search].present? %>
   <h2>Here's what BULK! could carry away from the site!</h2>
@@ -11,8 +11,9 @@
   </p>
   <%= render 'scrape_form' %>
 <% else %>
+  <h3 class="create">Step 1: <span class="text">Enter the wholesale URL and click add button to create a new deal.</span></h3>
   <p>
-    Let us attempt to automagically create your deal!
+
   </p>
   <%= form_tag new_deal_path, id: "search-form", method: :get do %>
     <p>
@@ -23,7 +24,7 @@
   <% end %>
 <% end %>
 
-
-<div id="form">
-<%= render 'form' %>
+<h3>Or you can manually create your deal: </h3>
+<div class="wrapper">
+  <%= render 'form' %>
 </div>
