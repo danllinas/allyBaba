@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @deal = Deal.find(params[:deal_id])
+    @user = current_user
   end
 
   def edit

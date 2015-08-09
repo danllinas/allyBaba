@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require social-share-button
  *= require_tree .
  *= require_self
  */
@@ -298,6 +299,7 @@ div.manual-deal {
 
 .manual-deal textarea {
   width: 100%;
+  font-size: 1em;
 }
 
 .stripe-button-el {
@@ -324,4 +326,8 @@ div.manual-deal {
 
 .future {
   color: purple;
+}
+
+div.social-share-button {
+  margin: 2%;
 }

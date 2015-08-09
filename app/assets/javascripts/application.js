@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require social-share-button
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
 
 function ready() {
   $('#trigger').on("click", function() {
@@ -30,9 +32,6 @@ function ready() {
 // $(document).on('page:load', ready)
 //can also do:
 $(document).on('ready page:load', ready)
-
-
-
 // var main = function(){
 //   $('.showView').hover(function(){
 //     $('a').css("fontSize", "20px");

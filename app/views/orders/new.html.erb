@@ -1,20 +1,24 @@
-<h1>Deal summary:</h1>
-<div id="header">
-<%= @deal.title %><br>
-<%= image_tag @deal.image %><br>
-<div id="section">
-  <ul>
-<li id="retail">Retail Price: $<%= @deal.retail_price %></li><br>
-<li>Wholesale Price: $<%= @deal.wholesale_price %></li><br>
-<li>URL: <%= @deal.url %></li><br>
-<li>Minimum Bids: <%= @deal.minimum_bids %></li><br>
-<li>Current Number of Bids: <%= @deal.total_bids %></li><br>
-<li>Deal Expiration Date: <%= l @deal.deal_expiration, format: :long %></li><br>
-<li>Estimated Delivery: <%= l @deal.estimated_delivery, format: :long %></li><br>
-<p>
-
- <%= button_to "Join Deal", deal_orders_path %>
-
-  Ready? Click here to join this deal! <%#= button_to "Join Deal", deal_orders_path %>
-</p>
+<h1>Here's your deal summary:</h1>
+<div class="deal-wrapper">
+  <div class="deal-image">
+    <%= image_tag @deal.image, class: "show-image" %>
+  </div>
+  <div class="deal-text">
+    <h2 class="deal-title"><%= @deal.title %></h2>
+    <span class="retail">$<%= @deal.retail_price %></span>
+    |   <span class="wholesale">$<%= @deal.wholesale_price %></span><br><br>
+    <div class="progress-meter">
+      <span class="progress" style="width: <%= number_to_percentage(progress( @deal.total_bids, @deal.minimum_bids), precision: 0) %>;"></span>
+    </div>
+    Progress: <%= number_to_percentage(progress( @deal.total_bids, @deal.minimum_bids), precision: 0) %><br>
+    Time Remaining: <%= ((@deal.deal_expiration - Time.now) / 86400).to_i.to_s %> days<br><br>
+  </div>
+  <div class="description-text">
+    Organizer: <%= @deal.organizer.first_name.capitalize %><br>
+    Expiration: <%= l @deal.deal_expiration, format: :long %><br>
+    Estimated Delivery: <%= l @deal.estimated_delivery, format: :long %><br>
+    Original Deal: <%= @deal.url %><br><br><br>
+    Description:<br><br> <%= @deal.description %><br><br>
+  </div>
+</div>
 <%= render 'form' %>

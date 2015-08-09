@@ -16,7 +16,7 @@
         	<span class="progress" style="width: <%= number_to_percentage(progress( deal.total_bids, deal.minimum_bids), precision: 0) %>;"></span>
         </div>
         Progress: <%= number_to_percentage(progress( deal.total_bids, deal.minimum_bids), precision: 0) %><br>
-        Time Remaining: <%= ((deal.deal_expiration - deal.created_at) / 86400).to_i.to_s %> days
+        Time Remaining: <%= ((deal.deal_expiration - Time.now) / 86400).to_i.to_s %> days
       </div>
     </figcaption>
   </div>

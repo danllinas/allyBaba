@@ -1,17 +1,7 @@
 <%= provide(:title, "Edit Deal") %>
-<style>
-  body{
-    text-align: center;
-  }
-</style>
-<body>
-  <hr>
 <h1>Edit Deal</h1>
-<hr>
-<p>Find me in app/views/deals/edit.html.erb</p>
 <div>
-<%= render 'form' %>
+<%= render 'edit_form' %>
 </div>
 <br>
 <%= link_to 'Delete deal', deal_path, method: :delete, data: { confirm: 'Are you sure you want to destroy this deal?'} %>
-</body>
