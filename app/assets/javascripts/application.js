@@ -17,7 +17,7 @@
 
 function ready() {
   $('#trigger').on("click", function() {
-    $('.modal').show();
+    $('.modal').show('slow');
   });
 };
 

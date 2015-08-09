@@ -7,7 +7,7 @@
 	    <li class="purple"><%= link_to "Log out", logout_path, method: "delete" %></li>
 	  <% else %>
 			<li class="purple"><%= link_to "How It Works", how_it_works_path %></li>
-		  <li class="purple"><%= link_to "Log in", login_path %></li>
+		  <li class="purple"><span id="trigger">Log in</span></li>
 	    <li class="purple"><%= link_to "Sign up", signup_path %></li>
 	  <% end %>
 		<a href="/"><img class='logo'src="/logo copy.png" alt="logo" /></a>
