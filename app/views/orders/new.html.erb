@@ -1,24 +1,28 @@
 <h1>Here's your deal summary:</h1>
-<div class="deal-wrapper">
-  <div class="deal-image">
-    <%= image_tag @deal.image, class: "show-image" %>
-  </div>
-  <div class="deal-text">
-    <h2 class="deal-title"><%= @deal.title %></h2>
-    <span class="retail">$<%= @deal.retail_price %></span>
-    |   <span class="wholesale">$<%= @deal.wholesale_price %></span><br><br>
-    <div class="progress-meter">
-      <span class="progress" style="width: <%= number_to_percentage(progress( @deal.total_bids, @deal.minimum_bids), precision: 0) %>;"></span>
+<div class="deal-box" id="order-box">
+  <figcaption>
+    <%= image_tag @deal.image %>
+    <h2><%= link_to(truncate(@deal.title, length: 30, seperator: ' '), @deal )  %></h2>
+    <div class="deal-detail">
+      <div class="prices">
+        <span class="retail">$<%= @deal.retail_price %></span>
+        |   <span class="wholesale">$<%= @deal.wholesale_price %></span><br><br>
+      </div>
+      <div class="progress-meter">
+        <span class="progress" style="width: <%= number_to_percentage(progress( @deal.total_bids, @deal.minimum_bids), precision: 0) %>;"></span>
+      </div>
+      Progress: <%= number_to_percentage(progress( @deal.total_bids, @deal.minimum_bids), precision: 0) %><br>
+      Time Remaining: <%= ((@deal.deal_expiration - Time.now) / 86400).to_i.to_s %> days
     </div>
-    Progress: <%= number_to_percentage(progress( @deal.total_bids, @deal.minimum_bids), precision: 0) %><br>
-    Time Remaining: <%= ((@deal.deal_expiration - Time.now) / 86400).to_i.to_s %> days<br><br>
-  </div>
-  <div class="description-text">
-    Organizer: <%= @deal.organizer.first_name.capitalize %><br>
-    Expiration: <%= l @deal.deal_expiration, format: :long %><br>
-    Estimated Delivery: <%= l @deal.estimated_delivery, format: :long %><br>
-    Original Deal: <%= @deal.url %><br><br><br>
-    Description:<br><br> <%= @deal.description %><br><br>
-  </div>
+  </figcaption>
 </div>
-<%= render 'form' %>
+<div class="description-text" id="order-text">
+  Organizer: <%= @deal.organizer.first_name.capitalize %><br>
+  Expiration: <%= l @deal.deal_expiration, format: :long %><br>
+  Estimated Delivery: <%= l @deal.estimated_delivery, format: :long %><br>
+  Original Deal: <%= @deal.url %><br><br><br>
+  Description:<br><br> <%= @deal.description %><br><br>
+</div>
+<div>
+  <%= render 'form' %>
+</div>

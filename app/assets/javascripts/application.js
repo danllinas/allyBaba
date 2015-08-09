@@ -28,9 +28,6 @@ function ready() {
   });
 };
 
-// $(ready);
-// $(document).on('page:load', ready)
-//can also do:
 $(document).on('ready page:load', ready)
 // var main = function(){
 //   $('.showView').hover(function(){

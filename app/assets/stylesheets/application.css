@@ -15,7 +15,7 @@
  *= require_self
  */
  .overlay {
-	position:absolute;
+	position: fixed;
   display:none;
   background-color: rgba(0, 0, 0, 0.7);
   top: 0;
@@ -330,4 +330,15 @@ div.manual-deal {
 
 div.social-share-button {
   margin: 2%;
+}
+
+#order-box {
+  float: left;
+}
+
+#order-text {
+  display: inline;
+  margin-left: 0;
+  width: 30%;
+  float: left;
 }
