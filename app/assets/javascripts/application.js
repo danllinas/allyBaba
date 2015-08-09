@@ -17,7 +17,12 @@
 
 function ready() {
   $('#trigger').on("click", function() {
+    $('.overlay').show();
     $('.modal').show('slow');
+  });
+  $('#login-trigger').on("click", function() {
+    $('overlay').hide();
+    $('modal').hide('slow');
   });
 };
 

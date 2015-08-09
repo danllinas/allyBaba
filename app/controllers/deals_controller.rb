@@ -10,6 +10,9 @@ class DealsController < ApplicationController
   def new
     if params[:search]
       @response = Deal.search(params[:search])
+      # respond_to do |format|
+      #   format.js
+      # end #currently, can't get this to work. 
     end
     @deal = Deal.new
     @deal.orders.build

@@ -13,39 +13,16 @@
  *= require_tree .
  *= require_self
  */
-
-/*li {
-  display: inline;
-  font-family: "helvetica";
-}
-a {
-  color: purple;
-}
-
-#user_nav {
-  text-align: center;
-  font-size: 20px;
-  padding-bottom: 24px;
-  	padding-top: 16px;
-  	padding-right: 30px
-}
-
-#user_nav ul {
-  list-style-type: none;
-  background-color: #F0F0F0;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  color: purple;
-  padding-left: 13px;
-
-}
-
-#user_nav ul li :hover {
-  color: green;
-}
-.nav_wrapper {
-  width:100%;
-}*/
+ .overlay {
+	position:absolute;
+  display:none;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 900;
+ }
 
 * {
   font-family: 'Lato';
@@ -123,9 +100,10 @@ body > header > ul > li:nth-child(3) {
   top: 75px;
   left: 22%;
   margin-bottom: 5%;
-  background-color: rgba(220, 220, 220, 0.9);
+  background-color: rgba(220, 220, 220, 1);
   padding: 25px 0px;
   border-radius: 15px;
+  z-index: 1000;
 }
 
 .modal:after {
@@ -300,4 +278,50 @@ span.text {
 
 .create {
   text-decoration: underline;
+}
+
+div.manual-deal {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.manual-deal label {
+  width: 100%;
+}
+
+.manual-deal input {
+  height: 25px;
+  width: 100%;
+  font-size: 1em;
+}
+
+.manual-deal textarea {
+  width: 100%;
+}
+
+.stripe-button-el {
+  margin-left: 42%;
+  margin: 1% 40%;
+}
+
+.how-it-works {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.how-it-works h3 {
+  text-align: center;
+  font-size: 1.5em;
+  color: purple;
+}
+
+.how-it-works h4 {
+  font-size: 1.1em;
+  color: purple;
+}
+
+.future {
+  color: purple;
 }

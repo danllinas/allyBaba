@@ -1,50 +1,24 @@
-<html>
-<head>
-	<title>How It Works</title>
-</head>
-<style>
-body {
-	background-color: #F0F0F0;
-}
-
-h2 {
-	color:#62008F;
-}
-
-h3 {
-	text-align: center;
-	color: #62008F;
-}
-h4 {
-	color: #62008F;
-}
-</style>
-
-<body>
-
-<br><br>
-<div>
-<h3>FAQ<h3>
-<br>
-<h4>So how does it work?</h4>
-We post popular wholesale items available for purchase. Each item has a minimum order number. Only when the order is met, will the items be shipped. Unlike other wholesale websites, we allow our customers to get the best deal possible without buying in bulk. Another unique feature is the option to create your own deals.  If you're interested in any other wholesale items you can create a deal and share it with friends on facebook.</h4>
-<br>
-<h4>When do I pay?</h4>
-To ensure all our bids are legitimate, you will be charged once you join the deal.
-<h4>When will my items be shipped?</h4>
-The items will be shipped once the minimum order requirment has been met.
-<br>
-<h4>Can I exchange or return an item after I receive it?</h4>
-No. We do not offer returns
-<h4>Do you ship internationally?</h4>
-Absolutely! We ship worldwide.
-<br>
-<h4>Can I receive my items as soon as I order?</h4>
-No, sorry! Your items will only be shipped once the minimum orders has been met.
-
+<%= provide(:title, "How it Works") %>
+<% if @user.nil? %>
+	<% @user = User.new %>
+<% end %>
+<div class="how-it-works">
+	<h3>FAQ<h3>
+	<h4>So how does it work?</h4>
+	We post popular wholesale items available for purchase. Each item has a minimum order number. Only when the order is met, will the items be shipped. Unlike other wholesale websites, we allow our customers to get the best deal possible without buying in bulk. Another unique feature is the option to create your own deals.  If you're interested in any other wholesale items you can create a deal and share it with friends on facebook.</h4>
+	<br>
+	<h4>When do I pay?</h4>
+	To ensure all our bids are legitimate, you will be charged once you join the deal.
+	<h4>When will my items be shipped?</h4>
+	The items will be shipped once the minimum order requirment has been met.
+	<br>
+	<h4>Can I exchange or return an item after I receive it?</h4>
+	No. We do not offer returns
+	<h4>Do you ship internationally?</h4>
+	Absolutely! We ship worldwide.
+	<br>
+	<h4>Can I receive my items as soon as I order?</h4>
+	No, sorry! Your items will only be shipped once the minimum orders have been met.
 </div>
 <br>
-<h2>"The future of wholesale commerce will be crowdsourced"</h2>
-
-</body>
-</html>
+<h2 class="future">"The future of wholesale commerce will be crowdsourced!"</h2>

@@ -19,12 +19,11 @@
     <p>
       <%= label_tag(:search, "Enter the URL:") %>
       <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", name: nil %>
+      <%= submit_tag "Add Deal", name: nil, class: "scrape-trigger", remote: true %>
     </p>
   <% end %>
 <% end %>
 
 <h3>Or you can manually create your deal: </h3>
-<div class="wrapper">
-  <%= render 'form' %>
-</div>
+
+<%= render 'form' %>
