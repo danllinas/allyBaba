@@ -1,6 +1,6 @@
 <div>
   <div>
-    <%= form_for(@order) do |f| %>
+    <%= form_for([@deal, @order]) do |f| %>
       <%= render 'shared/error_messages_order' %>
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button stripe-override"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"

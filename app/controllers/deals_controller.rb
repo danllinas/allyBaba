@@ -25,7 +25,7 @@ class DealsController < ApplicationController
   def update
     correct_user
     if @deal.update(deal_params)
-      flash[:success] = "Deal successfully updated."
+      flash[:success] = "Deal successfully updated!"
       redirect_to @current_user
     else
       render 'edit'

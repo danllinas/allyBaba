@@ -2,7 +2,7 @@
   <%= form_for(@deal) do |f| %>
     <%= render 'shared/error_messages_deal' %>
 
-    <%= f.label :url %>
+    <%= f.label :url, "Original Deal URL" %>
     <%= f.url_field :url, value: params[:search] %><br><br>
 
     <%= f.label :title %>
@@ -11,10 +11,10 @@
     <%= f.label :image %>
     <%= f.text_field :image, value: image %><br><br>
 
-    <%= f.label :retail_price_cents %>
+    <%= f.label :retail_price_cents, "Retail Price" %>
     <%= f.text_field :retail_price_cents %><br><br>
 
-    <%= f.label :wholesale_price_cents %>
+    <%= f.label :wholesale_price_cents, "Wholesale Price" %>
     <%= f.text_field :wholesale_price_cents, value: price_range %><br><br>
 
     <%= f.label :minimum_bids %>

@@ -18,16 +18,12 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @deal = Deal.find_by(params[:id])
+    @deal = Deal.find(params[:deal_id])
     @order = Order.new(stripe_params)
     @order.process_payment
     @order.deal_id = @deal.id
     @order.user_id = current_user.id
-    if @order.save
-      @deal.total_bids += 1
-      @deal.save
-      redirect_to current_user
-    end
+    redirect_to current_user if @order.save
   end
 
   def update
