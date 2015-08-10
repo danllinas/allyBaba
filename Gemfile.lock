@@ -258,6 +258,7 @@ DEPENDENCIES
   nokogiri
   paperclip
   pg
+  pry
   rails (= 4.2.3)
   rails_12factor
   sass-rails (~> 5.0)

@@ -38,7 +38,9 @@ function ready() {
   });
 };
 
-$(document).on('ready page:load', ready)
+
+$(document).on('ready page:load', ready);
+
 // var main = function(){
 //   $('.showView').hover(function(){
 //     $('a').css("fontSize", "20px");

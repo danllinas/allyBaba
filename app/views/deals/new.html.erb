@@ -5,6 +5,7 @@
   <h3><u>Step 2</u>:  Complete the missing fields. All fields required.</h3>
   <%= render 'scrape_form' %>
 <% else %>
+
   <h3><u>Step 1</u>:  Enter the wholesale URL and click "Add Deal" button:</h3>
   <div class="search-form">
     <%= form_tag new_deal_path, id: "search-form", method: :get do %>
@@ -13,6 +14,7 @@
         <%= submit_tag "Add Deal", name: nil, class: "create-button", id: "scrape-trigger" %>
     <% end %>
   </div>
+>>>>>>> 1633cedddc7a86bc89c2445040935220cd24c30e
 <% end %>
 
 <%= render 'form' %>

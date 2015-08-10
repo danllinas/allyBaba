@@ -11,6 +11,7 @@ class DealsController < ApplicationController
   def new
     if params[:search]
       @response = Deal.search(params[:search])
+
     end
     @deal = Deal.new
     @deal.orders.build
