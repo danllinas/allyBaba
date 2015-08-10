@@ -387,6 +387,7 @@ h3#step-3 {
 
 .shipping-info > input {
   width: 80%;
+  font-size: 1.2em;
 }
 
 .order-button {
