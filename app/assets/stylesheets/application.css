@@ -385,13 +385,8 @@ h3#step-3 {
   margin-top: -2%;
 }
 
-form.edit_user input {
-  width: 100%;
-
-}
-
-form.edit_user #user_zipcode {
-  width: 100%;
+.shipping-info > input {
+  width: 80%;
 }
 
 .order-button {
