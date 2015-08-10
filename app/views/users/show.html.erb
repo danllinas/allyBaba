@@ -3,6 +3,7 @@
 <h3>My Deals</h3>
 <div class="wrapper">
   <% current_user.deals.each do |deal| %>
+  <% if  %>
   <div class="deal-box">
     <figcaption>
       <%= link_to image_tag(deal.image), deal %>
@@ -28,6 +29,7 @@
 <h3>Joined Deals</h3>
 <div class="wrapper">
   <% current_user.orders.each do |order| %>
+  <% raise %>
   <div class="deal-box">
     <figcaption>
       <%= link_to image_tag(order.deal.image), deal_path(order.deal_id) %>

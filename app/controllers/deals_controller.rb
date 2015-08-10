@@ -1,6 +1,7 @@
 class DealsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :update, :new, :edit]
-
+  skip_before_action :verify_authenticity_token
+  
   def index
     @user = User.new
     @deals = Deal.all
