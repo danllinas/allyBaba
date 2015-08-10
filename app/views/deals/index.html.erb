@@ -1,5 +1,8 @@
 <%= provide(:title, "Deals") %>
+
+
 <button class="create-button"><%= link_to "Create A Deal!", new_deal_path %></button>
+
 <h3>Latest Deals</h3>
 <div class="wrapper">
   <% @deals.each do |deal| %>
