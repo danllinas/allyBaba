@@ -27,25 +27,25 @@
 <div class="shipping-info">
   <h2>Your Shipping Address:</h2>
 
-  <%= form_for(@user) do |f| %>
-    <%= render 'shared/error_messages_user' %>
+  <%#= form_for(@user) do |f| %>
+    <%#= render 'shared/error_messages_user' %>
 
-    <%= f.label :address1, "Street 1" %><br>
-    <%= f.text_field :address1 %><br><br>
+    <%#= f.label :address1, "Street 1" %><br>
+    <%#= f.text_field :address1 %><br><br>
 
-    <%= f.label :address2, "Street 2" %><br>
-    <%= f.text_field :address2 %><br><br>
+    <%#= f.label :address2, "Street 2" %><br>
+    <%#= f.text_field :address2 %><br><br>
 
-    <%= f.label :city %><br>
-    <%= f.text_field :city %><br><br>
+    <%#= f.label :city %><br>
+    <%#= f.text_field :city %><br><br>
 
-    <%= f.label :state %><br>
-    <%= f.select :state, options_for_select(us_states) %><br><br>
+    <%#= f.label :state %><br>
+    <%#= f.select :state, options_for_select(us_states) %><br><br>
 
-    <%= f.label :zipcode %><br>
-    <%= f.text_field :zipcode %>
+    <%#= f.label :zipcode %><br>
+    <%#= f.text_field :zipcode %>
 
-  <% end %>
+  <%# end %>
 
   <%= render 'form' %>
 </div>
