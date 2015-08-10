@@ -2,10 +2,10 @@
 <h2>Create a New Deal</h2>
 
 <% if params[:search] && params[:search].present? %>
-  <h3><u>Step 2:</u>  Complete the missing fields. All fields required.</h3>
+  <h3><u>Step 2</u>:  Complete the missing fields. All fields required.</h3>
   <%= render 'scrape_form' %>
 <% else %>
-  <h3><u>Step 1:</u>  Enter the wholesale URL and click "Add Deal" button:</h3>
+  <h3><u>Step 1</u>:  Enter the wholesale URL and click "Add Deal" button:</h3>
   <div class="search-form">
     <%= form_tag new_deal_path, id: "search-form", method: :get do %>
         <div <%= label_tag(:search, "Enter the URL:") %>

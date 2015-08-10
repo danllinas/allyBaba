@@ -373,3 +373,7 @@ div.social-share-button {
   position: relative;
   min-height 150px;
 }
+
+h3#step-3 {
+  margin-left: -27%;
+}

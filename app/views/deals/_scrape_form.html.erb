@@ -29,6 +29,7 @@
     <%= f.label :description %>
     <%= f.text_area :description, value: description %><br>
 
+    <h3 id="step-3"> <u>Step 3</u>: Pay for your order: </h3> 
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-description="Charge"
