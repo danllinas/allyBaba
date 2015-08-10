@@ -23,7 +23,6 @@ class OrdersController < ApplicationController
     @order.process_payment
     @order.deal_id = @deal.id
     @order.user_id = current_user.id
-    raise
     if @order.save
       @deal.total_bids += 1
       @deal.save

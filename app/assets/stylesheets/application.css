@@ -90,7 +90,7 @@ body > header > ul > li:nth-child(3) {
   background-color: none;
 }
 
-#trigger:hover {
+.trigger:hover {
   cursor: pointer;
 }
 
@@ -376,4 +376,29 @@ div.social-share-button {
 
 h3#step-3 {
   margin-left: -27%;
+}
+
+.shipping-info{
+  float: left;
+  width: 35%;
+  margin-left: 5%;
+  margin-top: -2%;
+}
+
+form.edit_user input {
+  width: 100%;
+
+}
+
+form.edit_user #user_zipcode {
+  width: 100%;
+}
+
+.order-button {
+  margin-left: 0%;
+}
+
+.stripe-override+.stripe-button-el {
+  margin-top: 5%;
+  margin-left: 0%;
 }

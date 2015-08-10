@@ -1,4 +1,4 @@
-<h1>Here's your deal summary:</h1>
+<h1>Deal Summary:</h1>
 <div class="deal-box" id="order-box">
   <figcaption>
     <%= image_tag @deal.image %>
@@ -17,31 +17,35 @@
   </figcaption>
 </div>
 <div class="description-text" id="order-text">
-  Organizer: <%= @deal.organizer.first_name.capitalize %><br>
-  Expiration: <%= l @deal.deal_expiration, format: :long %><br>
-  Estimated Delivery: <%= l @deal.estimated_delivery, format: :long %><br>
-  Original Deal: <%= @deal.url %><br><br><br>
-  Description:<br><br> <%= @deal.description %><br><br>
+  <strong>Organizer:</strong> <%= @deal.organizer.first_name.capitalize %><br><br>
+  <strong>Expiration:</strong> <%= l @deal.deal_expiration, format: :long %><br><br>
+  <strong>Estimated Delivery:</strong> <%= l @deal.estimated_delivery, format: :long %><br><br>
+  <strong>Original Deal:</strong> <%= truncate(@deal.url, length: 25) %><br><br>
+  <strong>Description:</strong><br><br> <%= @deal.description %><br><br>
 </div>
 
-<%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages_user' %>
+<div class="shipping-info">
+  <h2>Your Shipping Address:</h2>
 
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %><br>
+  <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages_user' %>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %><br>
+    <%= f.label :address1, "Street 1" %><br>
+    <%= f.text_field :address1 %><br><br>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %><br>
+    <%= f.label :address2, "Street 2" %><br>
+    <%= f.text_field :address2 %><br><br>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %><br>
+    <%= f.label :city %><br>
+    <%= f.text_field :city %><br><br>
 
-  <%= f.label :password_confirmation, "Password Confirmation" %>
-  <%= f.password_field :password_confirmation %><br>
+    <%= f.label :state %><br>
+    <%= f.select :state, options_for_select(us_states) %><br><br>
 
-  <%= f.submit "Sign-up", class: "signup-button" %>
-<% end %>
-<%= render 'form' %>
+    <%= f.label :zipcode %><br>
+    <%= f.text_field :zipcode %>
+
+  <% end %>
+
+  <%= render 'form' %>
+</div>

@@ -26,8 +26,14 @@ function ready() {
     $('.overlay').hide();
     $('.modal').hide('slow');
   });
-  $('.login-button').on("ajax:success", function (evt, data){
-    console.log("Event is working!");
+  $('.signup-button').on("click", function() {
+    $('.overlay').hide();
+    $('.modal').hide('slow');
+  });
+  $('.login-form').on('ajax:success', function (evt, data){
+    location.reload();
+  });
+  $('.new_user').on('ajax:success', function(evt, data) {
     location.reload();
   });
 };
