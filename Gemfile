@@ -8,6 +8,7 @@ gem 'httparty'
 gem 'nokogiri'
 gem 'money-rails'
 gem 'paperclip'
+
 gem 'simple_form'
 gem 'social-share-button'
 #gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
