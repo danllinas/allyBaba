@@ -1,14 +1,5 @@
-function ready() {
-  $('.scrape-trigger').on("click", function() {
-    $('#deal_url').val(params[:search]);
-    $('#deal_title').val(title);
-    $('#deal_image').val(image);
-    $('#deal_wholesale_price_cents').val(price_range);
-    $('#deal_description').val(description);
-  });
-};
-
-// $(ready);
-// $(document).on('page:load', ready)
-//can also do:
-$(document).on('ready page:load', ready)
+$('#deal_url').val('params[:search]');
+$('#deal_title').val("<%= title %>");
+$('#deal_image').val("<%= image %>");
+$('#deal_wholesale_price_cents').val("<%= price_range %>");
+$('#deal_description').val("<%= description %>");

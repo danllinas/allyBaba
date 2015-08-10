@@ -342,3 +342,34 @@ div.social-share-button {
   width: 30%;
   float: left;
 }
+
+#search {
+  font-size: .5em;
+  height: 35px;
+  width: 36%;
+}
+
+#search-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#search-form > div {
+  font-size: 2em;
+  color: purple;
+  margin-right: -20%;
+}
+
+#scrape-trigger {
+  margin-left: 3%;
+  padding: 19px 23px 9px 23px;
+  float: none;
+}
+
+.search-form {
+  width: 50%;
+  margin-left: 25%;
+  position: relative;
+  min-height 150px;
+}
