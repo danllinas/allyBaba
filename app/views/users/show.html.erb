@@ -28,22 +28,25 @@
 <h3>Joined Deals</h3>
 <div class="wrapper">
   <% current_user.orders.each do |order| %>
-  <div class="deal-box">
-    <figcaption>
-      <%= link_to image_tag(order.deal.image), deal_path(order.deal_id) %>
-      <h2><%= link_to(truncate(order.deal.title, length: 30, seperator: ' '), deal_path(order.deal_id))  %></h2>
-      <div class="deal-detail">
-        <div class="prices">
-          <span class="retail">$<%= order.deal.retail_price %></span>
-          |   <span class="wholesale">$<%= order.deal.wholesale_price %></span><br><br>
+    <% if order.deal.organizer == order.buyer %>
+      <% next %>
+    <% end %>
+    <div class="deal-box">
+      <figcaption>
+        <%= link_to image_tag(order.deal.image), deal_path(order.deal_id) %>
+        <h2><%= link_to(truncate(order.deal.title, length: 30, seperator: ' '), deal_path(order.deal_id))  %></h2>
+        <div class="deal-detail">
+          <div class="prices">
+            <span class="retail">$<%= order.deal.retail_price %></span>
+            |   <span class="wholesale">$<%= order.deal.wholesale_price %></span><br><br>
+          </div>
+          <div class="progress-meter">
+          	<span class="progress" style="width: <%= number_to_percentage(progress( order.deal.total_bids, order.deal.minimum_bids), precision: 0) %>;"></span>
+          </div>
+          Progress: <%= number_to_percentage(progress( order.deal.total_bids, order.deal.minimum_bids), precision: 0) %><br>
+          Time Remaining: <%= ((order.deal.deal_expiration - Time.now) / 86400).to_i.to_s %> days
         </div>
-        <div class="progress-meter">
-        	<span class="progress" style="width: <%= number_to_percentage(progress( order.deal.total_bids, order.deal.minimum_bids), precision: 0) %>;"></span>
-        </div>
-        Progress: <%= number_to_percentage(progress( order.deal.total_bids, order.deal.minimum_bids), precision: 0) %><br>
-        Time Remaining: <%= ((order.deal.deal_expiration - Time.now) / 86400).to_i.to_s %> days
-      </div>
-    </figcaption>
-  </div>
+      </figcaption>
+    </div>
   <% end %>
 </div>

@@ -15,7 +15,7 @@
  *= require_self
  */
  .overlay {
-	position:absolute;
+	position: fixed;
   display:none;
   background-color: rgba(0, 0, 0, 0.7);
   top: 0;
@@ -80,7 +80,7 @@ body > header > ul > li:nth-child(3) {
 }
 
 
-#trigger {
+.trigger {
   margin-top: 25px;
   font-size: 16px;
   text-decoration: none;
@@ -330,4 +330,50 @@ div.manual-deal {
 
 div.social-share-button {
   margin: 2%;
+}
+
+#order-box {
+  float: left;
+}
+
+#order-text {
+  display: inline;
+  margin-left: 0;
+  width: 30%;
+  float: left;
+}
+
+#search {
+  font-size: .5em;
+  height: 35px;
+  width: 36%;
+}
+
+#search-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#search-form > div {
+  font-size: 2em;
+  color: purple;
+  margin-right: -20%;
+}
+
+#scrape-trigger {
+  margin-left: 3%;
+  padding: 19px 23px 9px 23px;
+  float: none;
+}
+
+.search-form {
+  width: 50%;
+  margin-left: 25%;
+  position: relative;
+  min-height 150px;
+}
+
+h3#step-3 {
+  margin-left: -27%;
 }

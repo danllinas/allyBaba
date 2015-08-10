@@ -1,6 +1,7 @@
 class DealsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :update, :new, :edit]
-
+  skip_before_action :verify_authenticity_token
+  
   def index
     @user = User.new
     @deals = Deal.all
@@ -10,10 +11,7 @@ class DealsController < ApplicationController
   def new
     if params[:search]
       @response = Deal.search(params[:search])
-      respond_to do |format|
-        format.js
-        # format.html
-      end #currently, can't get this to work.
+
     end
     @deal = Deal.new
     @deal.orders.build

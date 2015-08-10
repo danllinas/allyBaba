@@ -18,20 +18,23 @@
 
 
 function ready() {
-  $('#trigger').on("click", function() {
+  $('.trigger').on("click", function() {
     $('.overlay').show();
     $('.modal').show('slow');
   });
   $('#login-trigger').on("click", function() {
-    $('overlay').hide();
-    $('modal').hide('slow');
+    $('.overlay').hide();
+    $('.modal').hide('slow');
+  });
+  $('.login-button').on("ajax:success", function (evt, data){
+    console.log("Event is working!");
+    location.reload();
   });
 };
 
-// $(ready);
-// $(document).on('page:load', ready)
-//can also do:
+
 $(document).on('ready page:load', ready);
+
 // var main = function(){
 //   $('.showView').hover(function(){
 //     $('a').css("fontSize", "20px");

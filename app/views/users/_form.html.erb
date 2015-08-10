@@ -1,3 +1,4 @@
+<% @user = current_user || User.new %>
 <div class="sign_up">
   <h2>Sign-up</h2>
   <%= form_for(@user, remote: true) do |f| %>
