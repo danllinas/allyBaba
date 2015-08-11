@@ -36,9 +36,13 @@ function ready() {
   $('.new_user').on('ajax:success', function(evt, data) {
     location.reload();
   });
-  $('li').on('hover', function(){
-    console.log("Hover working!");
-    $(this).find('a').css('fontSize', '40px');
+  $('li').hover(function(){
+    $(this).find('a').css('fontSize', '1.1em');
+    $(this).find('span').css('fontSize', '1.1em')
+  },
+  function(){
+    $(this).find('a').css("fontSize", "16px");
+    $(this).find('span').css("fontSize", "16px");
   });
 };
 
