@@ -27,6 +27,10 @@ function ready() {
     $('.overlay').hide();
     $('.modal').hide('slow');
   });
+  $('.overlay').on("click", function() {
+    $('.overlay').hide();
+    $('.modal').hide('slow');
+  });
   $('.signup-button').on("click", function() {
     $('.overlay').hide();
     $('.modal').hide('slow');
