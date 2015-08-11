@@ -418,7 +418,7 @@ h3#step-3 {
   margin-top: 2%;
 }
 
-#edit_deal_4 > input[type="submit"]:nth-child(47) {
+input[type="submit"]:nth-child(47) {
   width: 29%;
   margin-top: 3%;
   background-color: green;

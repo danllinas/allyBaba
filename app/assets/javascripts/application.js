@@ -38,12 +38,15 @@ function ready() {
   });
   $('li').hover(function(){
     $(this).find('a').css('fontSize', '1.1em');
-    $(this).find('span').css('fontSize', '1.1em')
+    $(this).find('span').css('fontSize', '1.1em');
   },
   function(){
     $(this).find('a').css("fontSize", "16px");
     $(this).find('span').css("fontSize", "16px");
   });
+  // $('.deal-box').on('mouseenter', function(){
+  //   $(this).find('img').effect('shake', {direction: 'right'});
+  // });
 };
 
 $(document).on('ready page:load', ready)
