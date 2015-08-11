@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+source 'http://rails-assets.org' do
+  gem 'rails-assets-RRSSB'
+end
+
 ruby '2.2.2'
 gem 'rails_12factor'
 gem 'pg'
@@ -12,6 +16,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'aws-s3'
 gem 'simple_form'
 gem 'social-share-button'
+
 #gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
