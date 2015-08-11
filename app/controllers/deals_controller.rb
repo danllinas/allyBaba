@@ -42,7 +42,7 @@ class DealsController < ApplicationController
     @deal.deal_expiration = 30.days.from_now
     @deal.wholesale_price = @deal.wholesale_price_cents
     @deal.retail_price = @deal.retail_price_cents
-    @deal.total_bids = 1
+    @deal.total_bids = 0
 
     @order = Order.new(stripe_params)
 
