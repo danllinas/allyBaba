@@ -36,6 +36,9 @@ function ready() {
   $('.new_user').on('ajax:success', function(evt, data) {
     location.reload();
   });
+  $('li').on('hover', function(){
+    $(this).find('a').css('fontSize', '22px');
+  });
 };
 
 $(document).on('ready page:load', ready)
