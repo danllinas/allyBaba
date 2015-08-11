@@ -66,6 +66,7 @@ a.logo > img{
   text-decoration: none;
   /*display: inline-block;*/
   padding: 0px 15px;
+  color: purple;
 }
 
 .create-text {
