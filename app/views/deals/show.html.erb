@@ -32,7 +32,7 @@
     <strong>Organizer:&nbsp;&nbsp;</strong>  <%= @deal.organizer.first_name.capitalize %><br>
     <strong>Expiration:&nbsp;&nbsp;</strong>  <%= l @deal.deal_expiration, format: :long %><br>
     <strong>Estimated Delivery:&nbsp;&nbsp;</strong>  <%= l @deal.estimated_delivery, format: :long %><br>
-    <strong>Original Deal:&nbsp;&nbsp;</strong>  <%= @deal.url %><br><br><br>
+    <strong>Original Deal:&nbsp;&nbsp;</strong>  <%= link_to @deal.url %><br><br><br>
     <strong>Description:&nbsp;&nbsp;</strong> <br><br> <%= @deal.description %><br><br>
     <h3 class="viral">Make it go viral!</h3> <%= social_share_button_tag(@deal.title) %>
   </div>

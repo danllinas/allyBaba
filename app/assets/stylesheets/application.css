@@ -458,3 +458,7 @@ body > footer > div > a {
   margin-left: 83%;
   font-size: .8em;
 }
+
+.description-text > a {
+  text-decoration: none;
+}

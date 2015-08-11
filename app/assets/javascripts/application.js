@@ -37,8 +37,8 @@ function ready() {
     location.reload();
   });
   $('li').hover(function(){
-    $(this).find('a').css('fontSize', '1.1em');
-    $(this).find('span').css('fontSize', '1.1em');
+    $(this).find('a').css('fontSize', '.9em');
+    $(this).find('span').css('fontSize', '.9em');
   },
   function(){
     $(this).find('a').css("fontSize", "16px");
