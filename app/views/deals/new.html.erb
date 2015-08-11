@@ -8,7 +8,7 @@
   <h3><u>Step 1</u>:  Enter the wholesale URL and click "Add Deal" button:</h3>
   <div class="search-form">
     <%= form_tag new_deal_path, id: "search-form", method: :get do %>
-        <div <%= label_tag(:search, "Enter the URL:") %>
+        <%= label_tag(:search, "Enter the URL:") %>
         <%= text_field_tag :search, params[:search] %>
         <%= submit_tag "Add Deal", name: nil, class: "create-button", id: "scrape-trigger" %>
     <% end %>
