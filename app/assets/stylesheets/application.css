@@ -40,7 +40,7 @@ header {
   padding-top: 20px;
 }
 
-.logo{
+a.logo > img{
   position: absolute;
   top: 0;
   left: 120px;
@@ -430,6 +430,10 @@ h3.faq {
   color: green;
 }
 
+footer {
+  position: relative;
+  bottom: 0;
+}
 .support {
   width: 100%;
   background-color: #F0F0F0;
