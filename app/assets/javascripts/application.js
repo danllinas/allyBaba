@@ -36,14 +36,14 @@ function ready() {
   $('.new_user').on('ajax:success', function(evt, data) {
     location.reload();
   });
-  $('li').hover(function(){
-    $(this).find('a').css('fontSize', '.9em');
-    $(this).find('span').css('fontSize', '.9em');
-  },
-  function(){
-    $(this).find('a').css("fontSize", "16px");
-    $(this).find('span').css("fontSize", "16px");
-  });
+  // $('li').hover(function(){
+  //   $(this).find('a').css('fontSize', '.9em');
+  //   $(this).find('span').css('fontSize', '.9em');
+  // },
+  // function(){
+  //   $(this).find('a').css("fontSize", "16px");
+  //   $(this).find('span').css("fontSize", "16px");
+  // });
   // $('.deal-box').on('mouseenter', function(){
   //   $(this).find('img').effect('shake', {direction: 'right'});
   // });
