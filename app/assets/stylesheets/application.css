@@ -64,6 +64,12 @@ header {
   padding: 0px 15px;
 }
 
+.create-text {
+  color: rgba(50, 45, 45, 0.84);
+  text-decoration: none;
+  font-size: 160%;
+}
+
 .purple a:visited {
   color: purple;
 }
@@ -252,7 +258,7 @@ button.create-button {
 }
 
 .create-button a {
-  color: rgba(50, 45, 45, 0.84);;
+  color: rgba(50, 45, 45, 0.84);
   text-decoration: none;
   font-size: 160%;
 }
@@ -405,4 +411,40 @@ h3#step-3 {
   font-size: 1.5em;
   font-style: italic;
   margin-top: 2%;
+}
+
+#edit_deal_4 > input[type="submit"]:nth-child(47) {
+  width: 29%;
+  margin-top: 3%;
+  background-color: green;
+  color: white;
+  height: 40px;
+  font-size: 1.5em;
+}
+
+.delete-link {
+  margin-left: 80%;
+}
+
+h3.faq {
+  color: green;
+}
+
+.support {
+  width: 100%;
+  background-color: #F0F0F0;
+  padding: .8em;
+  font-size: .9em;
+  position: relative;
+  bottom: 0;
+}
+
+body > footer > div > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.copy {
+  margin-left: 83%;
+  font-size: .8em;
 }

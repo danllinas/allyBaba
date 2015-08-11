@@ -1,7 +1,10 @@
 <%= provide(:title, "Deals") %>
 
-
-<button class="create-button"><%= link_to "Create A Deal!", new_deal_path %></button>
+<% if current_user %>
+  <button class="create-button"><%= link_to "Create A Deal!", new_deal_path %></button>
+<% else %>
+  <button class="create-button trigger"><span class="create-text">Create A Deal!</span></button>
+<% end %>
 
 <h3>Latest Deals</h3>
 <div class="wrapper">
