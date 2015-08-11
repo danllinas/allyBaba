@@ -1,3 +1,4 @@
+<% provide(:title, "Deal Detail") %>
 <div class="deal-wrapper">
   <div class="deal-image">
     <%= image_tag @deal.image, class: "show-image" %>
@@ -24,15 +25,15 @@
     <div class="progress-meter">
       <span class="progress" style="width: <%= number_to_percentage(progress( @deal.total_bids, @deal.minimum_bids), precision: 0) %>;"></span>
     </div>
-    Progress: <%= number_to_percentage(progress( @deal.total_bids, @deal.minimum_bids), precision: 0) %><br>
-    Time Remaining: <%= ((@deal.deal_expiration - Time.now) / 86400).to_i.to_s %> days<br><br>
+    <strong>Progress:&nbsp;&nbsp;</strong> <%= number_to_percentage(progress( @deal.total_bids, @deal.minimum_bids), precision: 0) %><br>
+    <strong>Time Remaining:&nbsp;&nbsp;</strong>  <%= ((@deal.deal_expiration - Time.now) / 86400).to_i.to_s %> days<br><br>
   </div>
   <div class="description-text">
-    Organizer: <%= @deal.organizer.first_name.capitalize %><br>
-    Expiration: <%= l @deal.deal_expiration, format: :long %><br>
-    Estimated Delivery: <%= l @deal.estimated_delivery, format: :long %><br>
-    Original Deal: <%= @deal.url %><br><br><br>
-    Description:<br><br> <%= @deal.description %><br><br>
-    Make it go viral! <%= social_share_button_tag(@deal.title) %>
+    <strong>Organizer:&nbsp;&nbsp;</strong>  <%= @deal.organizer.first_name.capitalize %><br>
+    <strong>Expiration:&nbsp;&nbsp;</strong>  <%= l @deal.deal_expiration, format: :long %><br>
+    <strong>Estimated Delivery:&nbsp;&nbsp;</strong>  <%= l @deal.estimated_delivery, format: :long %><br>
+    <strong>Original Deal:&nbsp;&nbsp;</strong>  <%= @deal.url %><br><br><br>
+    <strong>Description:&nbsp;&nbsp;</strong> <br><br> <%= @deal.description %><br><br>
+    <h3 class="viral">Make it go viral!</h3> <%= social_share_button_tag(@deal.title) %>
   </div>
 </div>

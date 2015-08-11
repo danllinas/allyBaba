@@ -435,6 +435,11 @@ h3.faq {
   color: green;
 }
 
+h3.viral {
+  color: purple;
+  margin-left: 0%;
+}
+
 .support {
   width: 100%;
   background-color: #F0F0F0;
