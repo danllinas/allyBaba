@@ -1,28 +1,7 @@
-== README
+#Readme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Final Project for Wyncode, Cohort 6. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Crowd-source app for buying in bulk. Allows users to create deals, join deals, share deals, and then make orders. Contains a scraper for dhgate items that automatically fills in form information. Stripe integration. This is a first draft, completed within a very limited amount of time (less than two weeks). 
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
