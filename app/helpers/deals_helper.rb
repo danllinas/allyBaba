@@ -14,4 +14,9 @@ module DealsHelper
   def image
     @response.css("#firstBImage > span > img")[0].to_a[1][1]
   end
+
+  def sorted_deals
+    @deals = @deals.sort_by &:created_at
+    @deals.reverse!
+  end
 end
