@@ -11,8 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require social-share-button
-//= require RRSSB
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
