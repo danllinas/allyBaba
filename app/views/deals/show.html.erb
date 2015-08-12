@@ -10,12 +10,10 @@
       <% elsif current_user.orders.find_by(deal_id: @deal.id) %>
         <h2>You already joined this deal!</h2>
       <% else %>
-
-          <button class="join-button deal"><%= link_to "Join this deal!", new_deal_order_path(@deal.id) %></button>
-
+        <button class="join-button deal"><%= link_to "Join this deal!", new_deal_order_path(@deal.id) %></button>
       <% end %>
     <% else %>
-          <button class="join-button deal"><nav id="trigger">Join this deal!</nav></button>
+        <button class="join-button deal"><span class="create-text trigger">Join this deal!</span></button>
     <% end %>
   </div>
   <div class="deal-text">
