@@ -12,10 +12,11 @@ gem 'httparty'
 gem 'nokogiri'
 gem 'money-rails'
 gem 'paperclip'
-gem 'aws-sdk', '~> 2.0'
-gem 'aws-s3'
+gem 'aws-sdk', '< 2.0'
+
 gem 'simple_form'
 gem 'social-share-button'
+gem 'aws-s3', git: 'git@github.com:bartoszkopinski/aws-s3.git'
 
 #gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
