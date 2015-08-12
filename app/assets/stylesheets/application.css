@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require social-share-button
  *= require RRSSB
  *= require_tree .
  *= require_self
@@ -340,10 +339,6 @@ div.manual-deal {
 
 .future {
   color: purple;
-}
-
-div.social-share-button {
-  margin: 2%;
 }
 
 #order-box {
