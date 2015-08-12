@@ -16,7 +16,7 @@ gem 'aws-sdk', '< 2.0'
 
 gem 'simple_form'
 
-gem 'aws-s3', git: 'git@github.com:bartoszkopinski/aws-s3.git'
+gem 'aws-s3', git: 'https://github.com/bartoszkopinski/aws-s3.git'
 
 #gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
