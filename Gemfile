@@ -4,7 +4,7 @@ source 'http://rails-assets.org' do
   gem 'rails-assets-RRSSB'
 end
 
-ruby '2.2.2'
+ruby '2.2.2
 gem 'rails_12factor'
 gem 'pg'
 gem 'better_errors'
