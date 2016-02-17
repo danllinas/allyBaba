@@ -15,7 +15,7 @@ gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 
 gem 'simple_form'
-
+gem 'aws-sdk'
 gem 'aws-s3', git: 'https://github.com/bartoszkopinski/aws-s3.git'
 
 #gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
